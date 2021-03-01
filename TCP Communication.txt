@@ -1,0 +1,6 @@
+TCP Communication
+    - end to end => the agents speaks TCP protocol, but not the network (routers only up to speak IP)
+    - ensure message delivering
+    - ensure message ordering
+    - support different message sizes
+    - allow the receiver to stablish
