@@ -57,3 +57,12 @@ Delay*Capcity => the amount of information that fits into a RTT
 
 ** It's not possible to know exactly in advance the value of RTT **
 ** But it can be ESTIMATED **
+
+
+Maximum Segment Size (MSS)
+    - MSS = MTU - IP_overhead - TCP_overhead
+    - where MTU (Maximum Transfer Unit), depends on LAN Ethernet: 1500 bytes are max up allowed on the Ethernet packets
+    - where overhead refers to the amount of information required for a protocol to be sent with each packet
+    - in this case, there are two intermediate protocols: TCP and IP, where usually:
+        - TCP_overhead = 20 bytes
+        - IP_overhead = 20 bytes
