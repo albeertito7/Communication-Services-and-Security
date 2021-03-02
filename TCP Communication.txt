@@ -41,9 +41,19 @@ TCP Highlights
 Round Trip Time
     - RTT = 2*τ + T
     - where τ is the propagation time => How much time takes a signal go from the transmiter to the receiver? that depends on:
-        - the light speed in the medium (c)
-        - the distance (meters)
+        - light speed in the medium (c)
+        - distance between agents (meters)
     - where T is the time required to transmit a segment/packet that depends on two factors:
         - bits per second (b/s)
         - segment/packet length (bytes)
-    
+
+Delay*Capcity => the amount of information that fits into a RTT
+    - where delay is in seconds
+    - where capacity is the transmition rate (bandwidth) => bits per seconds (b/s)
+
+100% TCP Efficiency => if the receiver buffer can fit de delay*capacity product at all
+    - but RTT is not deterministic, cuz depends on the intermediate network; there's not a direct communication between agents
+    - RTT = 2*τ + T where T depends direcly on the intermediate network load => HIGHLY VARIABLE
+
+** It's not possible to know exactly in advance the value of RTT **
+** But it can be ESTIMATED **
