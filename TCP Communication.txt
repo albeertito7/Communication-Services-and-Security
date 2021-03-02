@@ -30,6 +30,6 @@ TCP Highlights
         - and IP layer work with packets
     - flow control (avoids receiver overload) => mechanism allows receiver to adjust the transmition pace
     - congestion control (avoids intermediate network overload) => allows the transmiter to detect network saturation and adjust the transmition rate
-    - multiplexing => allows diff communication using the concept of port
+    - multiplexing => allows diff communication using multiple ports over the same source/dest ip and protocol
         - any communication/connection is defined by five params: [source_ip, source_port, protocol (TCP/UDP), destination_ip, destination_port]
 
