@@ -20,12 +20,16 @@ Low architecture communication layers (IP, Ethernet) don't avoid the following p
 
 
 TCP Highlights
-    - connection oriented
-    - full duplex
-    - reliable
-    - ordered delivery
-    - byte stream based. We call segment the TCP data unit
-    - flow control (avoids receiver overload)
-    - congestion control (avoids network overload)
-    - multiplexing
+    - connection oriented => before starting the communication btw two agents there's a face connection (connect, transmit, disconnect)
+    - full duplex => the info is sent in both directions among two agents
+    - reliable => if one packet is lost, this lost is detected and the packet can be recovered
+    - ordered delivery => the receiver agent can order the arrival packets even though they're disordered according its transmition
+    - byte stream based => the sequence number used to order the packets is referred not to this ones but to the bytes sent
+    - we call segment the TCP data unit => a segment is a specific amount of bytes sent, which can contain multiple IP packets
+        - so TCP layer work with segments of bytes
+        - and IP layer work with packets
+    - flow control (avoids receiver overload) => mechanism allows receiver to adjust the transmition pace
+    - congestion control (avoids intermediate network overload) => allows the transmiter to detect network saturation and adjust the transmition rate
+    - multiplexing => allows diff communication using the concept of port
+        - any communication/connection is defined by five params: [source_ip, source_port, protocol (TCP/UDP), destination_ip, destination_port]
 
