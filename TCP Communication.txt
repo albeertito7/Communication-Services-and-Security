@@ -1,6 +1,31 @@
 TCP Communication
-    - end to end => the agents speaks TCP protocol, but not the network (routers only up to speak IP)
+    - end to end => the agents speaks TCP protocol, but not the INTERMEDIATE network (routers speak up to layer 3 IP)
     - ensure message delivering
     - ensure message ordering
     - support different message sizes
-    - allow the receiver to stablish
+    - allow the receiver to stablish a Flow Control over the message delivery rate
+        - the two agents maybe are implemented using diff technology and one its faster than the other => set an appropiate pace
+    - allow multiple applications communicate through the same machine => multiplexing concept => diff communications through the same IP
+
+Low architecture communication layers (IP, Ethernet) don't avoid the following problems:
+    - packet loss
+    - packet ordering
+    - duplicate packet delivery
+    - max packet size to be delivered
+    - time limit for packet delivery => when a packet is sent, this must be considered lost usually after 2'
+
+    - in an IP network if one packet is loss, there's no way to recover it
+    - those problems can't be dealt by the lower layer protocols
+    ** this problems are solved by the TCP protocol **
+
+
+TCP Highlights
+    - connection oriented
+    - full duplex
+    - reliable
+    - ordered delivery
+    - byte stream based. We call segment the TCP data unit
+    - flow control (avoids receiver overload)
+    - congestion control (avoids network overload)
+    - multiplexing
+
