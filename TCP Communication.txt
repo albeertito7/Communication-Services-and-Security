@@ -20,16 +20,30 @@ Low architecture communication layers (IP, Ethernet) don't avoid the following p
 
 
 TCP Highlights
-    - connection oriented => before starting the communication btw two agents there's a face connection (connect, transmit, disconnect)
+    - connection oriented => before starting the communication btw two agents there's a connection phase
+        - requires connection and disconnection phases (connect, transmit, disconnect)
     - full duplex => the info is sent in both directions among two agents
-    - reliable => if one packet is lost, this lost is detected and the packet can be recovered
+    - end to end acknowledgment. Routers don't speak TCP
     - ordered delivery => the receiver agent can order the arrival packets even though they're disordered according its transmition
     - byte stream based => the sequence number used to order the packets is referred not to this ones but to the bytes sent
     - we call segment the TCP data unit => a segment is a specific amount of bytes sent, which can contain multiple IP packets
-        - so TCP layer work with segments of bytes
-        - and IP layer work with packets
+        - TCP layer work with segments of bytes
+        - IP layer work with packets
+    - reliable => if one packet is lost, this lost is detected and the packet can be recovered
+        - maximum segment lifetime (MLS) to 120 seconds
     - flow control (avoids receiver overload) => mechanism allows receiver to adjust the transmition pace
+        - TCP implements a byte stream based sliding window protocol
+        - TCP is able to adjust the sliding window size to the RTT (Round Trip Time). As well as the delay*capacity product
     - congestion control (avoids intermediate network overload) => allows the transmiter to detect network saturation and adjust the transmition rate
-    - multiplexing => allows diff communication using multiple ports over the same source/dest ip and protocol
+    - multiplexing => allows diff communication using multiple ports over the same source/destination IP and protocol
         - any communication/connection is defined by five params: [source_ip, source_port, protocol (TCP/UDP), destination_ip, destination_port]
-
+    
+Round Trip Time
+    - RTT = 2*τ + T
+    - where τ is the propagation time => How much time takes a signal go from the transmiter to the receiver? that depends on:
+        - the light speed in the medium (c)
+        - the distance (meters)
+    - where T is the time required to transmit a segment/packet that depends on two factors:
+        - bits per second (b/s)
+        - segment/packet length (bytes)
+    
