@@ -66,3 +66,10 @@ Maximum Segment Size (MSS)
     - in this case, there are two intermediate protocols: TCP and IP, where usually:
         - TCP_overhead = 20 bytes
         - IP_overhead = 20 bytes
+
+
+When an agent should decide to transmit?
+    - TCP triggers a segment transmission when (3 possible causes):
+        - the transmission buffer reaches MSS bytes
+        - a timer expires => cannot wait forever till MSS size reached
+        - explicitly indicated (push) by the transmission application. i.e. telnet
