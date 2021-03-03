@@ -117,6 +117,7 @@ Segment Format:
 
 Setting and ending a connection:
     - the connection establishment phase is known as three-way handshake
+    - only in this to cases give rise to Acknowledgement != SequenceNum + data, because there's no data
 
         Active part                                                 Passive part
          (client)                                                     (server)
