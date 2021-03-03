@@ -1,0 +1,22 @@
+TCP: Flow Control
+
+TCP Sliding Window
+    - allows:
+        - segment delivery guarantee => detects segment lost, and allows the transmiter to retransmit
+        - segment order guarantee => receiver reordering based on the SequenceNumber
+        - transmission and reception rate synchronization (flow control) using "AdvertisedWindow" TCP segment field
+    - Objective: define an "Effective Window" => measure that allows to adapt the transmiter pace to the receiver one
+
+
+How delivery and order is guaranteed?
+
+            Transmitter Application                                                 Receiver Application
+    -------------------------------------------------------------------------------------------------------------------------------- TCP
+
+                            LastByteWritten                                     LastByteRead         
+                            🠗                                                   🠗                                                       
+    ──────────────────────────────────────                                  ──────────────────────────────────────
+                │████████│██████│                                               │██████████│          │████│            Buffer
+    ──────────────────────────────────────                                  ──────────────────────────────────────
+                🠕        🠕                                                                 🠕               🠕
+      LastByteAck        LastByteSent                                      NextByteExpected                LastByteRecvd
