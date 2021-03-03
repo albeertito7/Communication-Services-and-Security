@@ -11,12 +11,24 @@ TCP Sliding Window
 How delivery and order is guaranteed?
 
             Transmitter Application                                                 Receiver Application
-    -------------------------------------------------------------------------------------------------------------------------------- TCP
+    ------------------------------------------------------------------------------------------------------------------- TCP
 
                                 LastByteWritten                                 LastByteRead         
                                 🠗                                               🠗                                                       
     ──────────────────────────────────────                                  ──────────────────────────────────────
-                │████████│██████│                                               │██████████│          │████│            Buffer
+                │████████│██████│                                               │██████████│          │████│            Buffers (fulfill from left to right)
     ──────────────────────────────────────                                  ──────────────────────────────────────
                 🠕        🠕                                                                 🠕               🠕
       LastByteAck        LastByteSent                                      NextByteExpected                LastByteRecvd
+
+
+    - LastByteWritten => last byte written in the buffer by the TX_Application
+    - LastByteSent => last byte sent to the receiver
+    - LastByteAck => last byte acknowledged
+
+    - all bytes before "LastByteAck" can be erased
+    - all the info sent but not acknowledged must be keep in the buffer (LastByteAck > X <= LastByteSent) => in case retransmition is needed
+
+    - LastByteRead =>
+    - NextByteExpected =>
+    - LastByteRecvd =>
