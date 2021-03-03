@@ -113,3 +113,38 @@ Segment Format:
     - Options => used for enlarge the SequenceNumber and the AdvertisedWindow
         - because SequenceNumber use 32 bits, but sometimes is not enough
         - the same applies with the AdvertisedWindow
+
+
+Setting and ending a connection:
+    - the connection establishment phase is known as three-way handshake
+
+        Active part                                                 Passive part
+         (client)                                                     (server)
+
+            '------------------- SYN, SequenceNum=x(random) ------------->'
+            '                                                             '
+            '                                                             '
+            '<---- SYN+ACK, SequenceNum=y(random), Acknowledgement=x+1 ---'
+            '                                                             '
+            '                                                             '
+            '------------------- ACK, Acknowledgement=y+1 --------------->'
+            '                                                             '
+
+                        ** Connection Setting Three-way handshake **
+
+        
+        Active part                                                 Passive part
+         (client)                                                     (server)
+
+            '------------------- FIN, SequenceNum=s --------------------->'
+            '                                                             '
+            '                                                             '
+            '<------------------ ACK, Acknowledgement=s+1 ----------------'
+            '                                                             '
+            '<------------------ FIN, SequenceNum=t ----------------------'
+            '                                                             '                     
+            '                                                             '
+            '------------------- ACK, Acknowledgement=t+1 --------------->'
+            '                                                             '
+
+                                ** Connection Ending **
