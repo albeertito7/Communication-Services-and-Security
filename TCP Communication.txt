@@ -72,4 +72,24 @@ When an agent should decide to transmit?
     - TCP triggers a segment transmission when (3 possible causes):
         - the transmission buffer reaches MSS bytes
         - a timer expires => cannot wait forever till MSS size reached
-        - explicitly indicated (push) by the transmission application. i.e. telnet
+        - explicitly indicated (push) by the transmission application. i.e. telnet => requires immediate feedback
+
+
+Segment Format:
+
+    0        4          10            16                                 31 bytes   
+    ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    '          SrcPort                '             DstPort              '
+    ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    '                          SequenceNumber                            '
+    ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    '                          Acknowledgment                            '
+    ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    '  HdrL  '  000000  '    Flags    '         AdvertisedWindow         '
+    ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    '          Checksum               '              UrgPtr              '
+    ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    '                               Options                              '
+    ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    '                                Data                                '                               
+    ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
