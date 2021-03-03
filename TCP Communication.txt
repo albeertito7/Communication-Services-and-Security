@@ -108,7 +108,7 @@ Segment Format:
         - URG => such a segment have urgent data, starting at UrgPtr
         - ACK => Acknowledgement 
     - AdvertisedWindow (4 bytes) => indicates to the transmitter how much size is available in the receiver buffer
-        - fullfilled by the receiver
+        - fullfilled by the receiver when its implement the flow control mechanism
     - Checksum (2 bytes) => control error over all the segment
     - Options => used for enlarge the SequenceNumber and the AdvertisedWindow
         - because SequenceNumber use 32 bits, but sometimes is not enough
