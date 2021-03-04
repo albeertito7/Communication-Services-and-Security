@@ -47,3 +47,14 @@ How delivery and order is guaranteed?
             - LastByteRead < NextByteExpected
             - LastByteRead <= LastByteRecvd
             - NextByteExpected <= LastByteRecvd+1
+
+
+    - both buffers have a MAXIMUM SIZE: MaxSenderBuffer and MaxRcvBuffer
+    - at TX => LastByteWritten - LastByteAck <= MaxSenderBuffer
+    - at RX => LastByteRcvd - LastByteRead <= MaxRcvBuffer
+
+    - to avoid RX Saturation => AdvertisedWindow = MaxRcvBuffer - (LastByteRcvd - LastByteRead) => How much space is available in the RX Buffer?
+    - TX must collaborate => EffectiveWindow = AvertiseWindow - (LastByteSent - LastByteAck) => How much bytes can TX sent and not collapse RX Buffer?
+
+    - if EffectiveWindow = 0, TX can not sent any segment
+    - if EffectiveWindow = 1, TX can send up to 1 MSS 
