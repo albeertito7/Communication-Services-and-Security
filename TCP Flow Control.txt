@@ -28,7 +28,22 @@ How delivery and order is guaranteed?
 
     - all bytes before "LastByteAck" can be erased
     - all the info sent but not acknowledged must be keep in the buffer (LastByteAck > X <= LastByteSent) => in case retransmition is needed
+    - all the info written but not sent (LastByteSent < X <= LastByteWritten) => info not retransmited yet
 
-    - LastByteRead =>
-    - NextByteExpected =>
-    - LastByteRecvd =>
+    - LastByteRead => last byte read by the receiver application
+    - NextByteExpected => the next byte expected to receive
+    - LastByteRecvd => last byte received from the transmitter
+
+    - all info before "LastByteRead" can be erased from the buffer because the application already got it
+    - there could be some lacks in the buffer of information not received yet, or maybe some information out of order => ordering occurs in the TCP Buffer
+    - bytes < NextByteExpected can be acknowledged, but the rest not because even having some more information this will be disordered
+
+    - following inequalities:
+        - for TX:
+            - LastByteAck <= LastByteSent
+            - LastByteSent <= LastByteWritten
+            - LastByteAck <= LastByteWritten
+        - for RX:
+            - LastByteRead < NextByteExpected
+            - LastByteRead <= LastByteRecvd
+            - NextByteExpected <= LastByteRecvd+1
