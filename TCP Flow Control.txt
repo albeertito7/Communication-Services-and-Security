@@ -142,3 +142,8 @@ RTT Estimation
             TimeOut = μ · RTTestimated + φ · Deviation
 
             where typically, 0 < δ < 1, μ ≈ 1 and φ ≈ 4
+
+        - if RTT doesn't change => Deviation doesn't change => low variance => RTTestimated is the most important
+        - if RTT change a lot => Deviation is high, thus takes importance => high variance => Deviation affects to the TimeOut => acction aggressively φ ≈ 4
+
+        - typically, congestion => high RTT variance
