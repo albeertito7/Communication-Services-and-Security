@@ -37,3 +37,9 @@ Service Policies
         - FQ solves the problem having multiple queues assigned to different streams, being served cyclically (Round-Robin) (RR)
         - STREAM: division of the bandwidth
         - Problem: because of diff size of the packets we can not guarantee to provide to each stream the specific bandwidth
+
+        - Different packet sizes. How they are served?
+            1. Packets arrive in sequence. Ai arribal time of the i_th packet. Si is the packet length
+            2. Fi => estimated time to finish. When an arriving packet founds the server free, Fi = Ai + Si. When the server is busy, Fi = max(F', Ai) + Si
+            3. Being F' the finish time of the packet being served
+            4. The packet with the lower Fi is transmitted first
