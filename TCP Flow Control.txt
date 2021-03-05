@@ -147,3 +147,29 @@ RTT Estimation
         - if RTT change a lot => Deviation is high, thus takes importance => high variance => Deviation affects to the TimeOut => acction aggressively φ ≈ 4
 
         - typically, congestion => high RTT variance
+
+
+Implementation aspects
+    - Problem:
+        - in all these previous equations there are floating point operations such as 0.x multiplication
+        - these operations when implemented in operating system kernels must be avoided => for efficiency of the kernel
+
+    - Idea:
+        - adaptive algorithms use integer arithmetic
+        - counters are scaled by 2^n:
+            - t_srtt_ = RTTestimated << T_SRTT_BITS
+            - t_rttvar_ = Deviation << T_RTTVAR_BITS
+            - T_SRTT_BITS = 3
+            - T_RTTVAR_BITS = 2
+        - default measure accuracy is 0.5 seconds
+
+        - Scaling:
+            - RTTestimated = α · Rttestimated + (1 - α) · RTT
+            - taking α = 7/8,
+                RTTestimated = 7/8 · RTTestimated + 1/8 · RTT
+            - from code (ns-35/tcp/tcp-rfc793.edu.cc)
+                value = RTT - (t_srtt_ >> T_SRTT_BITS), where t_srtt_ = RTTestimated and T_SRTT_BITS = 3 bits
+                t_srtt_ += value
+
+                - t_srtt_ >> T_SRTT_BITS means shifting 3 bits to the right ≈ divide by 8
+                - all this is true when RTTestimated is scaled over 8
