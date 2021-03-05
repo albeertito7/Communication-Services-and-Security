@@ -57,4 +57,29 @@ How delivery and order is guaranteed?
     - TX must collaborate => EffectiveWindow = AvertiseWindow - (LastByteSent - LastByteAck) => How much bytes can TX sent and not collapse RX Buffer?
 
     - if EffectiveWindow = 0, TX can not sent any segment
-    - if EffectiveWindow = 1, TX can send up to 1 MSS 
+    - if EffectiveWindow = 1, TX can send up to 1 MSS
+
+
+
+Wrapping the counters
+    - TCP has 32 bits for SequenceNumber. Problem: a lost segment must be waited for MSL seconds (typically 120s). During this time lapse, counters must not be wrapped
+
+
+    ┌→   ┌→ │                                                  │                Segment = TCP Data Unit in bytes transmited
+    │  T ┤  ▓   Segment                                        │                RTT = Round Trip Time
+    │    ├→ ▓                                                  │                T = Segment transmission time = segment size (b) / Transmitter rate (b/s) = (s)
+    │    │  │                                                  │                τ = distance (m) / c (m/s) = (s)
+    │    │  │                                                  │
+    │    │  │                                                  │
+RTT ┤  τ ┤  │                                                  │
+    │    │  │                                                  │
+    │    │  │                                                  │
+    │    │  │                                                  │
+    │    └→ │ - - - - - - - - - - - - - - - - - - - - - - - - -│
+    │       │                                                  │
+            │                                                  │
+            │                                                  │
+            │                                                  │
+            │
+            │
+            │
