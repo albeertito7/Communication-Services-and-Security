@@ -1,1 +1,32 @@
-Congestion Control
+
+Resource allocation: set of procedures that allows a network element to decide about how to assign the available resources (bandwidth and buffers size)
+    - decide about the traffic that arrives
+
+Congestion Control: set of procedures that avoid or correct congestion at the network
+
+- What is the difference between congestion control and flow control?
+    - congestion control operates at network and/or transmitter
+    - flow control does the same at receiver
+
+
+Network Model: IP based
+    - Packet switching
+    - Non-connected traffic flow => IP protocol is non-connected
+    - Service model: sometimes the intermediate network should provide some information (bandwith, delay, ...) (QoS)
+
+
+Service Policies
+
+    - queue poliy: the way a router schedules its incomming traffic
+        - which packets must be transmitted and what order
+        - which packets must be dropped if queue overflows
+
+    - First In Frist Out (FIFO)
+        - a drop tail procedure may be adhered
+        - doesn't provide any kind of congestion control and resource allocation
+        - implies external congestion control and resource allocation => e.g. at TCP layer
+    
+    - Variations:
+        - tag IP packets with a priority field (TOS)
+        - implement multiple queues with different priority
+        - Problem: high priority queues may block lower ones transmission
