@@ -124,3 +124,7 @@ RTT Estimation
      RTT  ┤ ¦                                       ¦
           │ ¦                                       ¦
           └→¦←── ack #seq received                  ¦
+
+        - Solution:
+            - Measuring RTT only when no retransmission
+            - Double TimeOut at each retransmission => as congestion is the main cause of retransmissions, one acts aggressively
