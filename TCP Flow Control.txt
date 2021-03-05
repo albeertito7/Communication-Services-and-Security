@@ -135,3 +135,10 @@ RTT Estimation
         - apart from considering RTT, but also its VARIANCE
         - when variance is small, take RTTestimated as a better choice than double TimeOut
         - when variance is high, don't rely on RTTestimated
+
+            Diff = RTT - RTTestimated
+            RTTestimated = RTTestimated + δ · Diff
+            Deviation = Deviation + δ(|Diff| - Deviation)
+            TimeOut = μ · RTTestimated + φ · Deviation
+
+            where typically, 0 < δ < 1, μ ≈ 1 and φ ≈ 4
