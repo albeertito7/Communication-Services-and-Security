@@ -27,6 +27,13 @@ Service Policies
         - implies external congestion control and resource allocation => e.g. at TCP layer
     
     - Variations:
-        - tag IP packets with a priority field (TOS)
+        - tag IP packets with a priority field (TOS) => Type Of Service
         - implement multiple queues with different priority
         - Problem: high priority queues may block lower ones transmission
+
+    
+    - Fair Queueing (FQ)
+        - assuming that congestion control and resource allocation relies on TCP, the problem of having greedy processes murt be overcome
+        - FQ solves the problem having multiple queues assigned to different streams, being served cyclically (Round-Robin) (RR)
+        - STREAM: division of the bandwidth
+        - Problem: because of diff size of the packets we can not guarantee to provide to each stream the specific bandwidth
