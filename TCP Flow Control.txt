@@ -69,7 +69,7 @@ Wrapping the counters
     ┌→   ┌→ │                                                  │                Segment = TCP Data Unit in bytes transmited
     │  T ┤  ▓   Segment                                        │                T = Segment transmission time = segment size (b) / Transmitter rate (b/s) = (s)
     │    ├→ ▓                                                  │                if no intermediate network, τ = distance (m) / c (m/s) = (s)
-    │    │  │                                                  │                Round Trip Time (RTT) = T + 2*τ
+    │    │  │                                                  │                Round Trip Time (RTT) = T + 2·τ
     │    │  │                                                  │                When the communication is direct => RTT is DETERMINISTIC
     │    │  │                                                  │
 RTT ┤  τ ┤  │                                                  │
@@ -95,3 +95,17 @@ RTT ┤  τ ┤  │                                                  │
         - τ is not deterministic, is STHOCASTIC => RTT not deterministic as well
         - τ will change according to the intermediate network congestion
         - so, we must perform an ESTIMATION, taking into account RTT may constantly change because of intermediate network congestion
+
+
+RTT Estimation
+    - Original algorithm
+        - measure RTT for each sent segment
+        - every time a segment is sent and we receive the acknowledgement, we mesure the RTT
+        
+        - RTT is updated according to:
+            RTTestimated = α · RTTestimated_previous + (1 - α) · RTT
+        - where α acts as a weighting factor between what we estimated previously and what we measured
+        - RTTestimated_previous = the previous estimated RTT
+        - RTT = what we mesured for the segment that has been acknowledged
+
+        - Finally, TimeOut = 2 · RTTestimated
