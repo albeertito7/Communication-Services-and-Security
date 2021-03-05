@@ -104,8 +104,23 @@ RTT Estimation
         
         - RTT is updated according to:
             RTTestimated = α · RTTestimated_previous + (1 - α) · RTT
-        - where α acts as a weighting factor between what we estimated previously and what we measured
+        - where α is between 0.8 and 0.9 and acts as a weighting factor among what we estimated previously and what we measured
+        - actually α = 7/8, in the TCP Kernel
         - RTTestimated_previous = the previous estimated RTT
         - RTT = what we mesured for the segment that has been acknowledged
 
         - Finally, TimeOut = 2 · RTTestimated
+
+    - Second algorithm: Karn/Partridge algorithm => arise because when estimate RTT with the original algorithm may be some problems
+        - Problem: RTT underestimated when TimeOut is shorter than RTT, because is not clear for TX to which transmission (first or the retrans) the received ack corresponds
+
+          ┌→├──→ trans #seq                         ¦          ** So, the RTT is not-well calculated,
+          │ ¦                                       ¦             because the transmitter considers the ack as the one for the retrans
+ TimeOut  ┤ ¦                                       ¦             as a result, RTT is understimated **
+          │ ¦                trans #seq received ──→¦
+          │ ¦                           ack #seq ←──┤
+          ├→├──→ retrans #seq                       ¦
+          │ ¦                                       ¦
+     RTT  ┤ ¦                                       ¦
+          │ ¦                                       ¦
+          └→¦←── ack #seq received                  ¦
