@@ -64,22 +64,34 @@ How delivery and order is guaranteed?
 Wrapping the counters
     - TCP has 32 bits for SequenceNumber. Problem: a lost segment must be waited for MSL seconds (typically 120s). During this time lapse, counters must not be wrapped
 
+        Transmitter                                         Receiver
 
     ┌→   ┌→ │                                                  │                Segment = TCP Data Unit in bytes transmited
-    │  T ┤  ▓   Segment                                        │                RTT = Round Trip Time
-    │    ├→ ▓                                                  │                T = Segment transmission time = segment size (b) / Transmitter rate (b/s) = (s)
-    │    │  │                                                  │                τ = distance (m) / c (m/s) = (s)
-    │    │  │                                                  │
+    │  T ┤  ▓   Segment                                        │                T = Segment transmission time = segment size (b) / Transmitter rate (b/s) = (s)
+    │    ├→ ▓                                                  │                if no intermediate network, τ = distance (m) / c (m/s) = (s)
+    │    │  │                                                  │                Round Trip Time (RTT) = T + 2*τ
+    │    │  │                                                  │                When the communication is direct => RTT is DETERMINISTIC
     │    │  │                                                  │
 RTT ┤  τ ┤  │                                                  │
-    │    │  │                                                  │
     │    │  │                                                  │
     │    │  │                                                  │
     │    └→ │ - - - - - - - - - - - - - - - - - - - - - - - - -│ Estimated segment arrival time
     │       │                                                  │
     │       │                                                  │
     │       │                                                  │
-    │       │                                                  │
-    │       │                                                  │
     └─────→ │←──  Ack Received                                 │
             │                                                  │
+
+    - Which is the time that the transmitter must wait till considering the segment has been lost?
+        - the TimeOut should be slightly bigger than the RTT => TO > RTT
+
+        - if TO < RTT, the segment will be retransmitted when no needed
+        - if TO >>> RTT, if the segment is lost the transmitter will wait too much time => INEFFICIENCY
+
+        ** A good TimeOut is crucial for the TCP Efficiency **
+
+
+    - But, What happens if there is an intermediate network? => the connection is not direct
+        - τ is not deterministic, is STHOCASTIC => RTT not deterministic as well
+        - τ will change according to the intermediate network congestion
+        - so, we must perform an ESTIMATION, taking into account RTT may constantly change because of intermediate network congestion
