@@ -10,16 +10,16 @@ TCP Sliding Window
 
 How delivery and order is guaranteed?
 
-            Transmitter Application                                                 Receiver Application
-    ------------------------------------------------------------------------------------------------------------------- TCP
+            Transmitter Application                         Receiver Application
+    ---------------------------------------------------------------------------------------- TCP
 
-                                LastByteWritten                                 LastByteRead         
-                                ↓                                               ↓                                                       
-    ──────────────────────────────────────                                  ──────────────────────────────────────
-                │████████│██████│                                               │██████████│          │████│            Buffers (fulfill from left to right)
-    ──────────────────────────────────────                                  ──────────────────────────────────────
-                ↑        ↑                                                                 ↑               ↑
-      LastByteAck        LastByteSent                                      NextByteExpected                LastByteRecvd
+                            LastByteWritten               LastByteRead         
+                            ↓                             ↓                                                       
+    ──────────────────────────────────               ────────────────────────────────────
+            │████████│██████│                             │██████████│      │████│            Buffers (fulfill from left to right)
+    ──────────────────────────────────               ────────────────────────────────────
+                ↑        ↑                                           ↑           ↑
+      LastByteAck        LastByteSent                 NextByteExpected           LastByteRecvd
 
 
     - LastByteWritten => last byte written in the buffer by the TX_Application
@@ -64,23 +64,23 @@ How delivery and order is guaranteed?
 Wrapping the counters
     - TCP has 32 bits for SequenceNumber. Problem: a lost segment must be waited for MSL seconds (typically 120s). During this time lapse, counters must not be wrapped
 
-        Transmitter                                 Receiver
+        Transmitter                     Receiver
 
-    ┌→   ┌→ │                                          │                Segment = TCP Data Unit in bytes transmited
-    │  T ┤  ▓   Segment                                │                T = Segment transmission time = segment size (b) / Transmitter rate (b/s) = (s)
-    │    ├→ ▓                                          │                if no intermediate network, τ = distance (m) / c (m/s) = (s)
-    │    │  │                                          │                Round Trip Time (RTT) = T + 2·τ
-    │    │  │                                          │                When the communication is direct => RTT is DETERMINISTIC
-    │    │  │                                          │
-RTT ┤  τ ┤  │                                          │
-    │    │  │                                          │
-    │    │  │                                          │
-    │    └→ │ - - - - - - - - - - - - - - - - - - - - -│ Estimated segment arrival time
-    │       │                                          │
-    │       │                                          │
-    │       │                                          │
-    └─────→ │←──  Ack Received                         │
-            │                                          │
+    ┌→   ┌→ │                              ¦        Segment = TCP Data Unit in bytes transmited
+    │  T ┤  ▓   Segment                    ¦        T = Segment transmission time = segment size (b) / Transmitter rate (b/s) = (s)
+    │    ├→ ▓                              ¦        if no intermediate network, τ = distance (m) / c (m/s) = (s)
+    │    │  │                              ¦        Round Trip Time (RTT) = T + 2·τ
+    │    │  ¦                              ¦        When the communication is direct => RTT is DETERMINISTIC
+    │    │  ¦                              ¦
+RTT ┤  τ ┤  ¦                              ¦
+    │    │  ¦                              ¦
+    │    │  ¦                              ¦
+    │    └→ ¦ - - - - - - - - - - - - - - -│ Estimated segment arrival time
+    │       ¦                              ¦
+    │       ¦                              ¦
+    │       ¦                              ¦
+    └─────→ ¦←──  Ack Received             ¦
+            ¦                              ¦
 
     - Which is the time that the transmitter must wait till considering the segment has been lost?
         - the TimeOut should be slightly bigger than the RTT => TO > RTT
@@ -115,12 +115,12 @@ RTT Estimation
     - Second algorithm: Karn/Partridge algorithm => arise because when estimate RTT with the original algorithm may be some problems
         - Problem: RTT underestimated when TimeOut is shorter than RTT, because is not clear for TX to which transmission (first or the retrans) the received ack corresponds
 
-          ┌→├──→ trans #seq                         ¦          ** So, the RTT is not-well calculated,
-          │ ¦                                       ¦             because the transmitter considers the ack as the one for the retrans
- TimeOut  ┤ ¦                                       ¦             as a result, RTT is understimated **
+          ┌→├──→ trans #seq                         ¦        ** So, the RTT is not-well calculated,
+          │ ¦                                       ¦           because the transmitter considers the ack as the one for the retrans
+ TimeOut  ┤ ¦                                       ¦           as a result, RTT is understimated **
           │ ¦                trans #seq received ──→¦
-          │ ¦                           ack #seq ←──┤           If several loses occurs, TimeOut might increase exponentially,
-          ├→├──→ retrans #seq                       ¦           because RTT would approach zero
+          │ ¦                           ack #seq ←──┤        If several loses occurs, TimeOut might increase exponentially,
+          ├→├──→ retrans #seq                       ¦        because RTT would approach zero
           │ ¦                                       ¦
      RTT  ┤ ¦                                       ¦
           │ ¦                                       ¦
