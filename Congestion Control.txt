@@ -10,13 +10,24 @@ Congestion Control: set of procedures that avoid or correct congestion at the ne
 
 
 Network Model: IP based
-    - Packet switching
+    - Packet switching: links and routers deal with discrete information units (IP packets)
     - Non-connected traffic flow => IP protocol is non-connected
-    - Service model: sometimes the intermediate network should provide some information (bandwith, delay, ...) (QoS)
+        - routers can distinguish non-conntected traffic flows via IP addresses (source, destination) or Tags set by the source
+    - Service model: sometimes the intermediate network should provide some information
+        - Quality of service (QoS), telling the source the parameters to be accomplished (bandwidth, delay, ...)
+        - one can ask to the network
 
+
+** We want to understand the mechanisms on TCP and on routers that can avoid a network congestion situatio **
+
+When a network is congested?
+    - a router has several queues
+    - the traffic enters throughs many ports and needs to be served
+    - the scheduler is the one who decides which queue is served at any time to transmit the packets
+    - if the queues are full => congestion situation => may produce loses and long delays
+    
 
 Service Policies
-
     - queue poliy: the way a router schedules its incomming traffic
         - which packets must be transmitted and what order
         - which packets must be dropped if queue overflows
