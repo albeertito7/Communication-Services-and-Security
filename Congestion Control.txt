@@ -25,9 +25,10 @@ When a network is congested?
     - the traffic enters throughs many ports and needs to be served
     - the scheduler is the one who decides which queue is served at any time to transmit the packets
     - if the queues are full => congestion situation => may produce loses and long delays
-    
+
 
 Service Policies
+    - a router must employ a queue policy or service policy
     - queue poliy: the way a router schedules its incomming traffic
         - which packets must be transmitted and what order
         - which packets must be dropped if queue overflows
@@ -36,13 +37,11 @@ Service Policies
         - a drop tail procedure may be adhered
         - doesn't provide any kind of congestion control and resource allocation
         - implies external congestion control and resource allocation => e.g. at TCP layer
-    
-    - Variations:
-        - tag IP packets with a priority field (TOS) => Type Of Service
-        - implement multiple queues with different priority
-        - Problem: high priority queues may block lower ones transmission
+        - Variations:
+            - tag IP packets with a priority field (TOS) => Type Of Service
+            - implement multiple queues with different priority
+            - Problem: high priority queues may block lower ones transmission
 
-    
     - Fair Queueing (FQ)
         - assuming that congestion control and resource allocation relies on TCP, the problem of having greedy processes murt be overcome
         - FQ solves the problem having multiple queues assigned to different streams, being served cyclically (Round-Robin) (RR)
