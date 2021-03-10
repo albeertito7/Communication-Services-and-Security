@@ -74,10 +74,9 @@ Service Policies
 
 
 Exercise Fair Queueing:
-
     - Table below shows a FQ policy sequence of events being:
         - A, the arrival time of a given segment,
-        - P, size of the segment
+        - S, size of the segment
 
         - Fullfill the table, knowing that:
             - F is the estimated finishing time of FQ policy,
@@ -85,7 +84,7 @@ Exercise Fair Queueing:
             - and Tf is its finish transmission time
 
         ╔════════════════════════════════════════════════════════╗                          
-        ║    A           P           F           Ti          Tf  ║
+        ║    A          S           F           Ti          Tf   ║
         ╠════════════════════════════════════════════════════════╣
         ║   0           4           4           3            7   ║
         ║   0           1           1           0            1   ║
@@ -97,3 +96,17 @@ Exercise Fair Queueing:
         ║   10.9        1           12          11           12  ║
         ║   11.9        2           14          12           14  ║
         ╚════════════════════════════════════════════════════════╝
+
+
+TCP: Congestion Control
+    - approach the congestion control issue from the end agents
+    - TCP sends segments to the network, without reservation, looking at their behavior and reacting
+        - don't depending on routers queue Policies
+        
+    ** How TCP agents react based on the network behaviour **
+    
+    - Outline:
+        - TCP computes how many segments fits inside a non congested network
+        - for each received ACK, a new segment is sent
+        - Adaptative process. Network load changes along time
+        - Different strategies. Non exclusive
