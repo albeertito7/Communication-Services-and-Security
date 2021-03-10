@@ -58,7 +58,41 @@ Service Policies
 
             ** when choosing a new packet to served, is not longer used a FIFO queue, it must be choose the one with less Fi **
 
+        - So, Fi = max(F', Ai) + Si
+
         - some characteristics:
             - the system never remains idle when queues are not empty
             - when n active streams, non has more than 1/n of the network capacity
             - when a stream becomes idle, the released amount of bandwidth is shared amont the rest
+
+    - Weighted Fair Queueing (WFQ)
+        - weighted version
+        - doing, Fi = max(F',Ai) + Si * rj
+        - being:
+            - F' the finish time for the current packet
+            - 1/rj the bandwith fraction assigned to queue j. So, Σ from 0 to j of 1/rj <= 1
+
+
+
+Exercise Fair Queueing:
+
+    - Table below shows a FQ policy sequence of events being:
+        - A, the arrival time of a given segment,
+        - P, size of the segment
+
+        - Fullfill the table, knowing that:
+            - F is the estimated finishing time of FQ policy,
+            - Ti is the start transmission time for segment,
+            - and Tf is its finish transmission time
+
+            A           P           F           Ti          Tf
+
+            0           4           4           3            7
+            0           1           1           0            1
+            0.9         1           2           1            2
+            1.5         1           3           2            3
+            5           2           9           7            9
+            8.9         2           11          9            11
+            10          4           15          14           18
+            10.9        1           12          11           12
+            11.9        2           14          12           14
