@@ -110,3 +110,16 @@ TCP: Congestion Control
         - for each received ACK, a new segment is sent
         - Adaptative process. Network load changes along time
         - Different strategies. Non exclusive
+
+        ** for each ACK received, the number of segments sent are increased **
+
+
+    - Congestion Window
+        - TCP defines a new variable CongestionWindow (cwnd)
+        - Equivalent to AdvertisedWindow (flow control), but at transmitter end
+        - Effective window is defined again as follows:
+
+            MaxWindow = MIN(cwnd, AdvertisedWindow)
+            EffectiveWindow = MaxWindow - (LastByteSent - LastByteAck)
+        
+        - How CongestionWindow is computed determines the congestion control mechanism: Original/nil, Additive increase/Multiplicative decrease, Slow start ...
