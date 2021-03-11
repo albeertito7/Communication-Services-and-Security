@@ -1,0 +1,24 @@
+
+Additive increase/Multiplicative decrease
+    - improve of the original algorithm
+
+    - CWMAX, CongestionWindow absolute maximum value
+    - cwini, cwnd initial value (usuarlly 1 MSS)
+    - cwmax, cwnd maximum value (initially set to CWMAX)
+    - When an ACK is received,
+        
+            if cwnd < cwmax {
+                cwnd = cwmax
+            }
+            else {
+                cwnd += MSS/cwnd
+                cwmax = MIN(CWMAX, cwnd)
+            }
+    
+    - When TimeOut,
+
+            cwnd = cwini
+            cwmax = MAX(cwini,  cwmax/2)
+
+    - Idea: TimeOut => retransmissions => worst congestion => fast reaction
+    - RTT must be estimated accurately => adaptative retransmission
