@@ -129,4 +129,14 @@ TCP: Congestion Control
         ** MaxWindow = depends on the network congestion and receiver collapse **
         ** So, minimizing between cwnd and AdvertisedWindow, is achieved both effects => flow control and congestion control **
 
-        - How CongestionWindow is computed determines the congestion control mechanism: Original/nil, Additive increase/Multiplicative decrease, Slow start ...
+        - How CongestionWindow is computed determines the congestion control mechanism:
+            - Original/nil, Additive increase/Multiplicative decrease, Slow start, Vegas ...
+
+
+Original (no control):
+    - CongestionWindow maximum value, CWMAX
+    - cwnd initial value (usually 1 MSS). cwini
+    - When an ACK is received, cwnd = CWMAX
+    - When TimeOut, cwnd = cwini
+
+    - only two values => low or high, as binary values
