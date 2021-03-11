@@ -122,4 +122,11 @@ TCP: Congestion Control
             MaxWindow = MIN(cwnd, AdvertisedWindow)
             EffectiveWindow = MaxWindow - (LastByteSent - LastByteAck)
         
+        ** Remeber: EffectiveWindow from the TCP view point is the amount of maximum segments a TCP agents can sent to the network without acknowledgment **
+        ** LastByteSent - LastByteAck = amount of info sent to the receiver but not acknowledged **
+        ** AdvertisedWindow = counter fullfilled by the receiver to inform transimitter how many info can be sent before collapse its receiver buffers **
+        ** cwnd = computed by the Tx, how many segments fits into the network before collapseing **
+        ** MaxWindow = depends on the network congestion and receiver collapse **
+        ** So, minimizing between cwnd and AdvertisedWindow, is achieved both effects => flow control and congestion control **
+
         - How CongestionWindow is computed determines the congestion control mechanism: Original/nil, Additive increase/Multiplicative decrease, Slow start ...
