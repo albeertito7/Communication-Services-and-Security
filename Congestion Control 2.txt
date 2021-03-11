@@ -11,14 +11,15 @@ Additive increase/Multiplicative decrease
                 cwnd = cwmax
             }
             else {
-                cwnd += MSS/cwnd
+                cwnd += MSS/cwnd => ADDITIVE INCREASE
                 cwmax = MIN(CWMAX, cwnd)
             }
     
     - When TimeOut,
 
             cwnd = cwini
-            cwmax = MAX(cwini,  cwmax/2)
+            cwmax = MAX(cwini,  cwmax/2) => MULTIPLICATIVE DECREASE
 
     - Idea: TimeOut => retransmissions => worst congestion => fast reaction
     - RTT must be estimated accurately => adaptative retransmission
+        - RTT will tell when a TimeOut is produced
