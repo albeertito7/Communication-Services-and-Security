@@ -133,7 +133,7 @@ TCP: Congestion Control
             - Original/nil, Additive increase/Multiplicative decrease, Slow start, Vegas ...
 
 
-Original (no control):
+Original (no control) => rough/basic control:
     - CongestionWindow maximum value, CWMAX
     - cwnd initial value (usually 1 MSS). cwini
     - When an ACK is received, cwnd = CWMAX
