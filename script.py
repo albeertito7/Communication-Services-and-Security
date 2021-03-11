@@ -7,11 +7,9 @@ def main():
     if not os.path.isfile(file):
        print("File path {} does not exist. Exiting...".format(file))
        sys.exit(-1)
-
+       
     list = []
-    with open(file) as file_in:
-        for line in file_in:
-            list.append(tuple(line.strip().split(" ")))
+    with open(file) as reader: [list.append(tuple(line.strip().split(" "))) for line in reader]
 
     print(list)
 
