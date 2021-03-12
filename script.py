@@ -23,14 +23,14 @@ def main():
     data = [tuple(line.strip().split(" ")) for line in args.file.readlines()]
     flows = list(map(int, args.flows.split(",")))
 
-    results = schedule(data, "WFQ")
+    results = schedule(data, type="WFQ")
     print(results)
 
 def schedule(data, type):
     return {
-        "FQ": fair_queueing(data)
+        "FQ": fair_queueing(data),
         "WFQ": weighted_fair_queueing(data)
-    }.get(type)
+    }.get(type, "Error: scheduler mechanism not specified")
     
 def fair_queueing(data):
     pass
