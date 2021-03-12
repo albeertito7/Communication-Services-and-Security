@@ -23,8 +23,20 @@ def main():
     data = [tuple(line.strip().split(" ")) for line in args.file.readlines()]
     flows = list(map(int, args.flows.split(",")))
 
-    print(data)
-    print(flows)
+    results = schedule(data, "WFQ")
+    print(results)
+
+def schedule(data, type):
+    return {
+        "FQ": fair_queueing(data)
+        "WFQ": weighted_fair_queueing(data)
+    }.get(type)
+    
+def fair_queueing(data):
+    pass
+
+def weighted_fair_queueing(data):
+    return "asdf"
 
 if __name__ == '__main__':
     main()
