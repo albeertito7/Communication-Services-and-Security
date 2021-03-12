@@ -20,9 +20,7 @@ def is_file(parser, file):
 def main():
     args = parse_arguments()
 
-    data = list()
-    [data.append(tuple(line.strip().split(" "))) for line in args.file.readlines()]
-
+    data = [tuple(line.strip().split(" ")) for line in args.file.readlines()]
     flows = list(map(int, args.flows.split(",")))
 
     print(data)
