@@ -20,11 +20,10 @@ def is_file(parser, file):
 def main():
     args = parse_arguments()
 
-    data = [tuple(line.strip().split(" ")) for line in args.file.readlines()]
+    data = [list(map(float, line.strip().split())) for line in args.file.readlines()]
     flows = list(map(int, args.flows.split(",")))
 
-    results = schedule(data, type="WFQ")
-    print(results)
+    schedule(data, type="FQ")
 
 def schedule(data, type):
     return {
@@ -32,11 +31,16 @@ def schedule(data, type):
         "WFQ": weighted_fair_queueing(data)
     }.get(type, "Error: scheduler mechanism not specified")
     
-def fair_queueing(data):
-    pass
+def fair_queueing(data, timeFinish=0, packets_received=[]):
+    for packet in data:
+        if packet[0] <= timeFinish:
+            time_estimated = max(timeFinish, packet[0]) + packet[1]
+            packets_received.append(packet+[time_estimated]) #packets received at a time
+    
+    print("Packets Received: ", packets_received)
 
 def weighted_fair_queueing(data):
-    return "asdf"
+    pass
 
 if __name__ == '__main__':
     main()
