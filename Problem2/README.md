@@ -4,7 +4,7 @@ Script implementing the packet-based network scheduling algorithms called:
 * Weighted Fair Queueing (WFQ)
 
 
-## IO
+## IO-Model
 
 Input:
 * File based on a list of triples sorted in time where each one represents a packet with the following fields:
@@ -19,7 +19,7 @@ Output:
 * The transmission order sequence according to the algorithm selected</li>
 
 ## Arguments
-`usage: script.py [-h] [-s {FQ,WFQ}] [-f FLOWS] [-o OUTFILE] [-v] file`
+Usage: `script.py [-h] [-s {FQ,WFQ}] [-f FLOWS] [-o OUTFILE] [-v] file`
 
 ```
 positional arguments:
