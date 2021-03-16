@@ -18,9 +18,10 @@ Input:
 Output:
 * The transmission order sequence according to the algorithm selected</li>
 
-## Arguments
+### Arguments
 Usage: `script.py [-h] [-s {FQ,WFQ}] [-f FLOWS] [-o OUTFILE] [-v] file`
 
+#### Help
 ```
 positional arguments:
   file         File name containing the list of triplets to be scheduled.
