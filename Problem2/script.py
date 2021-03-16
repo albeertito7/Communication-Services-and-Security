@@ -3,58 +3,41 @@ import argparse, os
 from argparse import RawTextHelpFormatter
 from functools import partial
 
-VERBOSE = False
+# global vars
+VERBOSE = DISPLAY = False
+ALGORITHM_CHOICES = ('FQ', 'WFQ')
 
 def parse_arguments():
-    parser = argparse.ArgumentParser(description="Script implementing a packet-based network scheduling algorithm called Fair Queueing and its Weighted version.", formatter_class=RawTextHelpFormatter)
+    parser = argparse.ArgumentParser(prog="Network Scheduling Script", description="Script implementing a packet-based network scheduling algorithm called Fair Queueing and its Weighted version.", formatter_class=RawTextHelpFormatter)
 
+    # Required Arguments
     parser.add_argument('file', type=lambda x: is_file(parser, x), help='File name containing the list of triplets to be scheduled.')
-    parser.add_argument('-s', dest="type", default="FQ", choices=['FQ', 'WFQ'], type=str, required=False, help="String to specify the network scheduling algorithm policy. If not specified will be executed the Fair Queueing as a default option.\n"
-        "   · FQ = Fair Queueing\n"
-        "   · WFQ = Weighted Fair Queueing.\n")
+    
+    # Optional Arguments
+    parser.add_argument('-s', dest="type", type=str, default="FQ", choices=ALGORITHM_CHOICES, required=False, help="String to specify the network scheduling algorithm policy. If not specified will be executed the Fair Queueing as a default option.\n  · FQ = Fair Queueing\n  · WFQ = Weighted Fair Queueing.\n")
     parser.add_argument('-f', dest="flows", type=str, required=False, help='Fraction of the bandwidth assigned to each flow (as a percentage). Comma separated. As an example: 50,10,40 \nWill only be taken into account when the policy {WFQ} is specified.')
     parser.add_argument('-o', dest='outFile', type=str, required=False, help='Output file name containing the results')
-    parser.add_argument('-v', dest='verbose', default=False, action='store_true', required=False, help='Display additional details about the execution such as the packets received and delivered at each time.')
-    #parser.add_argument('-d', action='store_true', required=False, help='Display results on the screen')
+    parser.add_argument('-v', dest='verbose', action='store_true', default=False, required=False, help='Display additional details about the execution such as the packets received and delivered at each time.')
+    #parser.add_argument('-d', dest="display", action='store_true', default=False, required=False, help='Display results on the screen')
 
     return parser.parse_intermixed_args()
 
 def is_file(parser, file):
-    if not os.path.isfile(file):
-        parser_error("File path '{}' does not exist. Exiting...".format(file))
-    else:
-        return open(file, 'r')
+    if not os.path.isfile(file): parser.error("File path '{}' does not exist. Exiting...".format(file))
+    return open(file, 'r')
 
-def main():
-    args = parse_arguments()
-
-    VERBOSE = args.verbose
-
-    #data = [list(map(float, line.strip().split())) for line in args.file.readlines()]
-
-    #flows = [x/100 for x in list(map(float, args.flows.split(",")))]
-
-    print("Scheduler: ", args.type)
-    print("Flows: ", args.flows)
-    print("Output file: ", args.outFile)
-    print("Verbose: ", VERBOSE)
-
-    #result = schedule(data, flows, type=args.type)
-    #printResult(result)
-
-def schedule(data, flows=None, type="FQ"):
-    switcher = {
-        "FQ": partial(fair_queueing, data),
-        "WFQ": partial(weighted_fair_queueing, data, flows)
-    }
-    return switcher.get(type, errorHandler)()
-    
 def errorHandler():
     return "Error: scheduler mechanism not specified"
 
+def schedule(data, flows=None, type="FQ"):
+    return {
+        "FQ": partial(fair_queueing, data),
+        "WFQ": partial(weighted_fair_queueing, data, flows)
+    }.get(type, errorHandler)()
+
 def fair_queueing(data, timeFinish=0, packets_received=[], packets_delivered=[]):
     
-    if len(data) <= 0 and len(packets_received) <= 0:
+    if len(data) <= 0 and len(packets_received) <= 0: # terminal test
         return packets_delivered
 
     count_adds = 0
@@ -74,29 +57,18 @@ def fair_queueing(data, timeFinish=0, packets_received=[], packets_delivered=[])
                 count_adds += 1
 
     data = data[count_adds:] # remove packets received
-    
-    if VERBOSE:
-        print("Data to receive: ", data)
-        print("Received packets: ", packets_received)
 
-    tmp = packets_received[0][4]
-    packet_less = packets_received[0]
-    for less in packets_received:
-        if less[4] < tmp:
-            tmp = less[4]
-            packet_less = less
+    if VERBOSE: print("Data to receive: ", data, "\nReceived packets: ", packets_received)
 
-    timeFinish+=packet_less[1] # size sum
+    packet_to_deliver = min(packets_received, key=lambda x: x[4])
 
-    packets_received.remove(packet_less) # remove first occurrence
-    packets_delivered.append(packet_less+[timeFinish]) # packet with less time sent
+    timeFinish+=packet_to_deliver[2]
+    packets_received.remove(packet_to_deliver) # remove first occurrence
+    packets_delivered.append(packet_to_deliver+[timeFinish]) # packet with less time sent
  
-    if VERBOSE:
-        print("Packet delivered: ", packet_less+[timeFinish])
-        print("-------------------------------------------------------------------------------------------------------------------------------------------------")
+    if VERBOSE: print("Packet delivered: ", packet_to_deliver+[timeFinish]), print('-' * os.get_terminal_size().columns)
 
     return fair_queueing(data, timeFinish, packets_received, packets_delivered)
-
 
 def weighted_fair_queueing(data, flows, timeFinish=0, packets_received=[], packets_delivered=[]):
 
@@ -108,7 +80,6 @@ def weighted_fair_queueing(data, flows, timeFinish=0, packets_received=[], packe
     for packet in data:
         if packet[1] <= timeFinish:
             time_estimated = max(timeFinish, packet[1]) + packet[2]*flows[int(packet[3])-1]
-            print(flows[int(packet[3])-1], time_estimated)
             packets_received.append(packet+[time_estimated]) # packets received at a time
             count_adds += 1
 
@@ -122,31 +93,32 @@ def weighted_fair_queueing(data, flows, timeFinish=0, packets_received=[], packe
 
     data = data[count_adds:] # remove packets received
     
-    if VERBOSE:
-        print("Data to receive: ", data)
-        print("Received packets: ", packets_received)
+    if VERBOSE: print("Data to receive: ", data, "\nReceived packets: ", packets_received)
 
-    tmp = packets_received[0][4]
-    packet_less = packets_received[0]
-    for less in packets_received:
-        if less[4] < tmp:
-            tmp = less[4]
-            packet_less = less
+    packet_to_deliver = min(packets_received, key=lambda x: x[4])
 
-    timeFinish+=packet_less[2] # size sum
-
-    packets_received.remove(packet_less) # remove first occurrence
-    packets_delivered.append(packet_less+[timeFinish]) # packet with less time sent
+    timeFinish+=packet_to_deliver[2] # size sum
+    packets_received.remove(packet_to_deliver) # remove first occurrence
+    packets_delivered.append(packet_to_deliver+[timeFinish]) # packet with less time sent
     
-    if VERBOSE:
-        print("Packet delivered: ", packet_less+[timeFinish])
-        print("-------------------------------------------------------------------------------------------------------------------------------------------------")
+    if VERBOSE: print("Packet delivered: ", packet_to_deliver+[timeFinish]), print('-' * os.get_terminal_size().columns)
 
     return weighted_fair_queueing(data, flows, timeFinish, packets_received, packets_delivered)
 
 def printResult(data): 
     print("Result: ", [x[0] for x in data])
 
+def main():
+    args = parse_arguments() # parse arguments
+
+    global VERBOSE
+    VERBOSE = args.verbose
+
+    data = [list(map(float, [num] + line.strip().split())) for num, line in enumerate(args.file.readlines(), 1)]
+    flows = [x/100 for x in list(map(float, args.flows.split(",")))] if args.flows and args.type == ALGORITHM_CHOICES[1] else None
+
+    result = schedule(data, flows, type=args.type)
+    printResult(result)
 
 if __name__ == '__main__':
     main()
