@@ -1,8 +1,13 @@
+# Network Scheduling Algorithms
 Script implementing the packet-based network scheduling algorithms called:
-    ■ Fair Queueing (FQ)
-    ■ Weighted Fair Queueing (WFQ)
+<ul>
+    <li>Fair Queueing (FQ)</li>
+    <li>Weighted Fair Queueing (WFQ)</li>
+<ul>
 
-Input: 
+# Arguments
+
+Input:
     ■ file based on a list of triplets where each one represents an arrival packet, the ones ordered in time, with the following fields:
         - Arrival time (float)
         - Packet size (float)
