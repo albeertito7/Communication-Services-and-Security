@@ -66,23 +66,14 @@ def weighted_fair_queueing(data, flows, timeFinish=0, packets_received=[], packe
     if len(data) <= 0 and len(packets_received) <= 0:
         return packets_delivered
 
-    count_adds = 0
+    filtered = list(filter(lambda packet: packet[1] <= timeFinish, data))
 
-    for packet in data:
-        if packet[1] <= timeFinish:
-            time_estimated = max(timeFinish, packet[1]) + packet[2]*flows[int(packet[3])-1]
-            packets_received.append(packet+[time_estimated]) # packets received at a time
-            count_adds += 1
+    if len(filtered) == 0:
+        filtered = list(filter(lambda packet: packet[1] <= data[0][1], data))
 
-    if(len(packets_received) <= 0 and count_adds == 0):
-        timeFinish = data[0][1]
-        for packet in data:
-            if packet[1] <= timeFinish:
-                time_estimated = max(timeFinish, packet[1]) + packet[2]*flows[int(packet[3])-1]
-                packets_received.append(packet+[time_estimated]) # packets received at a time
-                count_adds += 1
+    [packets_received.append(packet+[max(timeFinish, packet[1]) + packet[2]*flows[int(packet[3])-1]]) for packet in filtered]
 
-    data = data[count_adds:] # remove packets received
+    data = data[len(filtered):] # remove packets received
     
     if VERBOSE: print("Data to receive: ", data, "\nReceived packets: ", packets_received)
 
