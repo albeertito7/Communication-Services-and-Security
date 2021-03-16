@@ -9,8 +9,8 @@ Script implementing the packet-based network scheduling algorithms called:
 
 Input:
 <ul>
-    <li>File based on a list of triplets where each one represents an arrival packet, the ones ordered in time, with the following fields:
-        <ol>
+    <li>File based on a list of triples sorted in time where each one represents a packet with the following fields:
+        <ol type="1">
             <li>Arrival time (float)</li>
             <li>Packet size (float)</li>
             <li>Flow/stream identifier (integer >= 1)</li>
