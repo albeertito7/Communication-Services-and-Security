@@ -13,7 +13,12 @@ Input:
         <ol><li>Arrival time (float)</li>
         <li>Packet size (float)</li>
         <li>Flow/stream identifier (integer >= 1)</li></ol>
-    </li>            
+        <p>
+             As an example:      0.1 1.0 1
+                                 0.2 2.1 2
+                                 ...
+        </p>
+    </li>
     <li>In case of WFQ:
         <ul><li>Fraction of the bandwidth assigned to each flow (as a percentage). Comma separated. As an example: 50,10,40</li></ul>
     </li>
