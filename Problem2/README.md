@@ -3,7 +3,7 @@ Script implementing the packet-based network scheduling algorithms called:
 <ul>
     <li>Fair Queueing (FQ)</li>
     <li>Weighted Fair Queueing (WFQ)</li>
-<ul>
+</ul>
 
 ## Arguments
 
