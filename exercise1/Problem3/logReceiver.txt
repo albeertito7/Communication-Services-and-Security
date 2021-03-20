@@ -1,0 +1,255 @@
+Time: 4.47 | Event: Received Segment | Num: 0 | Error: 0
+Time: 4.47 | Event: Segment Added | Num: 0 | Buffer: [0]
+Time: 4.47 | Event: Next Expected Update | Buffer:  [0] | Next Expected: 1 Sequence: 0
+SEND ACK  0  - Without a correct reception (2s) | Time: 4.57
+SEND ACK  1  - Without a correct reception (2s) | Time: 6.67
+Time: 7.69 | Event: Received Segment | Num: 1 | Error: 0
+Time: 7.69 | Event: Segment Added | Num: 1 | Buffer: [0, 1]
+Time: 7.69 | Event: Next Expected Update | Buffer:  [0, 1] | Next Expected: 2 Sequence: 1
+Time: 8.69 | Event: Received Segment | Num: 2 | Error: 1
+SEND ACK  2  - Without a correct reception (2s) | Time: 9.79
+Time: 10.81 | Event: Received Segment | Num: 3 | Error: 1
+Time: 11.80 | Event: Received Segment | Num: 4 | Error: 0
+Time: 11.80 | Event: Segment Added | Num: 4 | Buffer: [0, 1, 4]
+SEND ACK  2  - Without a correct reception (2s) | Time: 11.89
+SEND ACK  2  - Without a correct reception (2s) | Time: 14.00
+SEND ACK  2  - Without a correct reception (2s) | Time: 16.10
+SEND ACK  2  - Without a correct reception (2s) | Time: 18.20
+SEND ACK  2  - Without a correct reception (2s) | Time: 20.30
+SEND ACK  2  - Without a correct reception (2s) | Time: 22.41
+SEND ACK  2  - Without a correct reception (2s) | Time: 24.51
+SEND ACK  2  - Without a correct reception (2s) | Time: 26.62
+Time: 26.92 | Event: Received Segment | Num: 3 | Error: 0
+Time: 26.92 | Event: Segment Added | Num: 3 | Buffer: [0, 1, 3, 4]
+Time: 27.00 | Event: Received Segment | Num: 2 | Error: 0
+Time: 27.00 | Event: Segment Added | Num: 2 | Buffer: [0, 1, 2, 3, 4]
+Time: 27.00 | Event: 3 or more segments in sequence | Buffer read:  [0, 1, 2, 3, 4] => [] | Next Expected: 5 | Sequence: 4
+SEND ACK  5  - 3 or more segments in sequence | Time: 27.1240
+Time: 27.90 | Event: Received Segment | Num: 4 | Error: 0
+Time: 28.14 | Event: Received Segment | Num: 5 | Error: 1
+SEND ACK  5  - Without a correct reception (2s) | Time: 29.23
+SEND ACK  5  - Without a correct reception (2s) | Time: 31.34
+SEND ACK  5  - Without a correct reception (2s) | Time: 33.44
+SEND ACK  5  - Without a correct reception (2s) | Time: 35.54
+SEND ACK  5  - Without a correct reception (2s) | Time: 37.64
+SEND ACK  5  - Without a correct reception (2s) | Time: 39.75
+SEND ACK  5  - Without a correct reception (2s) | Time: 41.85
+SEND ACK  5  - Without a correct reception (2s) | Time: 43.95
+Time: 44.25 | Event: Received Segment | Num: 5 | Error: 0
+Time: 44.25 | Event: Segment Added | Num: 5 | Buffer: [5]
+Time: 44.26 | Event: Next Expected Update | Buffer:  [5] | Next Expected: 6 Sequence: 0
+SEND ACK  6  - Without a correct reception (2s) | Time: 46.37
+Time: 47.39 | Event: Received Segment | Num: 6 | Error: 0
+Time: 47.39 | Event: Segment Added | Num: 6 | Buffer: [5, 6]
+Time: 47.39 | Event: Next Expected Update | Buffer:  [5, 6] | Next Expected: 7 Sequence: 1
+Time: 48.39 | Event: Received Segment | Num: 7 | Error: 1
+SEND ACK  7  - Without a correct reception (2s) | Time: 49.50
+Time: 50.52 | Event: Received Segment | Num: 8 | Error: 0
+Time: 50.53 | Event: Segment Added | Num: 8 | Buffer: [5, 6, 8]
+SEND ACK  7  - Without a correct reception (2s) | Time: 51.60
+SEND ACK  7  - Without a correct reception (2s) | Time: 53.70
+SEND ACK  7  - Without a correct reception (2s) | Time: 55.81
+SEND ACK  7  - Without a correct reception (2s) | Time: 57.91
+SEND ACK  7  - Without a correct reception (2s) | Time: 60.02
+SEND ACK  7  - Without a correct reception (2s) | Time: 62.12
+SEND ACK  7  - Without a correct reception (2s) | Time: 64.22
+Time: 64.50 | Event: Received Segment | Num: 7 | Error: 0
+Time: 64.51 | Event: Segment Added | Num: 7 | Buffer: [5, 6, 7, 8]
+Time: 64.52 | Event: 3 or more segments in sequence | Buffer read:  [5, 6, 7, 8] => [] | Next Expected: 9 | Sequence: 3
+SEND ACK  9  - 3 or more segments in sequence | Time: 64.6419
+Time: 64.85 | Event: Received Segment | Num: 8 | Error: 0
+Time: 65.66 | Event: Received Segment | Num: 9 | Error: 0
+Time: 65.67 | Event: Segment Added | Num: 9 | Buffer: [9]
+Time: 65.67 | Event: Next Expected Update | Buffer:  [9] | Next Expected: 10 Sequence: 0
+SEND ACK  10  - Without a correct reception (2s) | Time: 67.78
+Time: 68.80 | Event: Received Segment | Num: 10 | Error: 0
+Time: 68.80 | Event: Segment Added | Num: 10 | Buffer: [9, 10]
+Time: 68.80 | Event: Next Expected Update | Buffer:  [9, 10] | Next Expected: 11 Sequence: 1
+Time: 69.81 | Event: Received Segment | Num: 11 | Error: 1
+SEND ACK  11  - Without a correct reception (2s) | Time: 70.91
+Time: 71.93 | Event: Received Segment | Num: 12 | Error: 0
+Time: 71.94 | Event: Segment Added | Num: 12 | Buffer: [9, 10, 12]
+SEND ACK  11  - Without a correct reception (2s) | Time: 73.01
+SEND ACK  11  - Without a correct reception (2s) | Time: 75.11
+SEND ACK  11  - Without a correct reception (2s) | Time: 77.21
+SEND ACK  11  - Without a correct reception (2s) | Time: 79.32
+SEND ACK  11  - Without a correct reception (2s) | Time: 81.42
+Time: 82.75 | Event: Received Segment | Num: 11 | Error: 0
+Time: 82.76 | Event: Segment Added | Num: 11 | Buffer: [9, 10, 11, 12]
+Time: 82.76 | Event: 3 or more segments in sequence | Buffer read:  [9, 10, 11, 12] => [] | Next Expected: 13 | Sequence: 3
+SEND ACK  13  - 3 or more segments in sequence | Time: 82.8890
+Time: 83.73 | Event: Received Segment | Num: 12 | Error: 0
+Time: 83.90 | Event: Received Segment | Num: 13 | Error: 1
+SEND ACK  13  - Without a correct reception (2s) | Time: 84.99
+SEND ACK  13  - Without a correct reception (2s) | Time: 87.09
+SEND ACK  13  - Without a correct reception (2s) | Time: 89.20
+SEND ACK  13  - Without a correct reception (2s) | Time: 91.30
+SEND ACK  13  - Without a correct reception (2s) | Time: 93.41
+SEND ACK  13  - Without a correct reception (2s) | Time: 95.51
+Time: 95.71 | Event: Received Segment | Num: 13 | Error: 0
+Time: 95.71 | Event: Segment Added | Num: 13 | Buffer: [13]
+Time: 95.71 | Event: Next Expected Update | Buffer:  [13] | Next Expected: 14 Sequence: 0
+SEND ACK  14  - Without a correct reception (2s) | Time: 97.81
+Time: 98.83 | Event: Received Segment | Num: 14 | Error: 0
+Time: 98.83 | Event: Segment Added | Num: 14 | Buffer: [13, 14]
+Time: 98.83 | Event: Next Expected Update | Buffer:  [13, 14] | Next Expected: 15 Sequence: 1
+Time: 99.83 | Event: Received Segment | Num: 15 | Error: 0
+Time: 99.84 | Event: Segment Added | Num: 15 | Buffer: [13, 14, 15]
+Time: 99.84 | Event: 3 or more segments in sequence | Buffer read:  [13, 14, 15] => [] | Next Expected: 16 | Sequence: 2
+SEND ACK  16  - 3 or more segments in sequence | Time: 99.9712
+Time: 100.99 | Event: Received Segment | Num: 16 | Error: 0
+Time: 100.99 | Event: Segment Added | Num: 16 | Buffer: [16]
+Time: 101.00 | Event: Next Expected Update | Buffer:  [16] | Next Expected: 17 Sequence: 0
+Time: 101.99 | Event: Received Segment | Num: 17 | Error: 1
+SEND ACK  17  - Without a correct reception (2s) | Time: 103.10
+Time: 104.13 | Event: Received Segment | Num: 18 | Error: 0
+Time: 104.13 | Event: Segment Added | Num: 18 | Buffer: [16, 18]
+SEND ACK  17  - Without a correct reception (2s) | Time: 105.21
+SEND ACK  17  - Without a correct reception (2s) | Time: 107.31
+SEND ACK  17  - Without a correct reception (2s) | Time: 109.41
+SEND ACK  17  - Without a correct reception (2s) | Time: 111.51
+Time: 112.11 | Event: Received Segment | Num: 17 | Error: 0
+Time: 112.11 | Event: Segment Added | Num: 17 | Buffer: [16, 17, 18]
+Time: 112.11 | Event: 3 or more segments in sequence | Buffer read:  [16, 17, 18] => [] | Next Expected: 19 | Sequence: 2
+SEND ACK  19  - 3 or more segments in sequence | Time: 112.2279
+Time: 113.25 | Event: Received Segment | Num: 19 | Error: 1
+Time: 114.25 | Event: Received Segment | Num: 20 | Error: 0
+Time: 114.25 | Event: Segment Added | Num: 20 | Buffer: [20]
+SEND ACK  19  - Without a correct reception (2s) | Time: 114.34
+SEND ACK  19  - Without a correct reception (2s) | Time: 116.44
+SEND ACK  19  - Without a correct reception (2s) | Time: 118.54
+SEND ACK  19  - Without a correct reception (2s) | Time: 120.65
+SEND ACK  19  - Without a correct reception (2s) | Time: 122.75
+Time: 124.74 | Event: Received Segment | Num: 19 | Error: 0
+Time: 124.74 | Event: Segment Added | Num: 19 | Buffer: [19, 20]
+Time: 124.75 | Event: Next Expected Update | Buffer:  [19, 20] | Next Expected: 21 Sequence: 1
+SEND ACK  19  - Without a correct reception (2s) | Time: 124.86
+Time: 125.74 | Event: Received Segment | Num: 20 | Error: 0
+SEND ACK  21  - Without a correct reception (2s) | Time: 126.96
+Time: 127.98 | Event: Received Segment | Num: 21 | Error: 0
+Time: 127.98 | Event: Segment Added | Num: 21 | Buffer: [19, 20, 21]
+Time: 127.98 | Event: 3 or more segments in sequence | Buffer read:  [19, 20, 21] => [] | Next Expected: 22 | Sequence: 2
+SEND ACK  22  - 3 or more segments in sequence | Time: 128.1018
+Time: 128.99 | Event: Received Segment | Num: 22 | Error: 0
+Time: 128.99 | Event: Segment Added | Num: 22 | Buffer: [22]
+Time: 129.00 | Event: Next Expected Update | Buffer:  [22] | Next Expected: 23 Sequence: 0
+Time: 129.99 | Event: Received Segment | Num: 23 | Error: 1
+SEND ACK  23  - Without a correct reception (2s) | Time: 131.10
+Time: 132.13 | Event: Received Segment | Num: 24 | Error: 0
+Time: 132.13 | Event: Segment Added | Num: 24 | Buffer: [22, 24]
+SEND ACK  23  - Without a correct reception (2s) | Time: 133.20
+SEND ACK  23  - Without a correct reception (2s) | Time: 135.31
+SEND ACK  23  - Without a correct reception (2s) | Time: 137.41
+SEND ACK  23  - Without a correct reception (2s) | Time: 139.52
+Time: 139.84 | Event: Received Segment | Num: 23 | Error: 0
+Time: 139.85 | Event: Segment Added | Num: 23 | Buffer: [22, 23, 24]
+Time: 139.85 | Event: 3 or more segments in sequence | Buffer read:  [22, 23, 24] => [] | Next Expected: 25 | Sequence: 2
+SEND ACK  25  - 3 or more segments in sequence | Time: 139.9834
+Time: 140.99 | Event: Received Segment | Num: 25 | Error: 0
+Time: 140.99 | Event: Segment Added | Num: 25 | Buffer: [25]
+Time: 140.99 | Event: Next Expected Update | Buffer:  [25] | Next Expected: 26 Sequence: 0
+Time: 141.99 | Event: Received Segment | Num: 26 | Error: 0
+Time: 142.00 | Event: Segment Added | Num: 26 | Buffer: [25, 26]
+Time: 142.00 | Event: Next Expected Update | Buffer:  [25, 26] | Next Expected: 27 Sequence: 1
+SEND ACK  27  - Without a correct reception (2s) | Time: 144.11
+Time: 145.13 | Event: Received Segment | Num: 27 | Error: 0
+Time: 145.13 | Event: Segment Added | Num: 27 | Buffer: [25, 26, 27]
+Time: 145.13 | Event: 3 or more segments in sequence | Buffer read:  [25, 26, 27] => [] | Next Expected: 28 | Sequence: 2
+SEND ACK  28  - 3 or more segments in sequence | Time: 145.2580
+Time: 146.14 | Event: Received Segment | Num: 28 | Error: 0
+Time: 146.14 | Event: Segment Added | Num: 28 | Buffer: [28]
+Time: 146.15 | Event: Next Expected Update | Buffer:  [28] | Next Expected: 29 Sequence: 0
+Time: 147.14 | Event: Received Segment | Num: 29 | Error: 1
+SEND ACK  29  - Without a correct reception (2s) | Time: 148.25
+Time: 149.27 | Event: Received Segment | Num: 30 | Error: 0
+Time: 149.27 | Event: Segment Added | Num: 30 | Buffer: [28, 30]
+Time: 150.27 | Event: Received Segment | Num: 31 | Error: 1
+SEND ACK  29  - Without a correct reception (2s) | Time: 150.36
+SEND ACK  29  - Without a correct reception (2s) | Time: 152.46
+SEND ACK  29  - Without a correct reception (2s) | Time: 154.56
+Time: 156.15 | Event: Received Segment | Num: 29 | Error: 0
+Time: 156.16 | Event: Segment Added | Num: 29 | Buffer: [28, 29, 30]
+Time: 156.16 | Event: 3 or more segments in sequence | Buffer read:  [28, 29, 30] => [] | Next Expected: 31 | Sequence: 2
+SEND ACK  31  - 3 or more segments in sequence | Time: 156.2929
+Time: 157.31 | Event: Received Segment | Num: 32 | Error: 0
+Time: 157.32 | Event: Segment Added | Num: 32 | Buffer: [32]
+SEND ACK  31  - Without a correct reception (2s) | Time: 158.40
+Time: 158.95 | Event: Received Segment | Num: 31 | Error: 0
+Time: 158.95 | Event: Segment Added | Num: 31 | Buffer: [31, 32]
+Time: 158.96 | Event: Next Expected Update | Buffer:  [31, 32] | Next Expected: 33 Sequence: 1
+SEND ACK  33  - Without a correct reception (2s) | Time: 161.06
+Time: 162.09 | Event: Received Segment | Num: 33 | Error: 0
+Time: 162.09 | Event: Segment Added | Num: 33 | Buffer: [31, 32, 33]
+Time: 162.09 | Event: 3 or more segments in sequence | Buffer read:  [31, 32, 33] => [] | Next Expected: 34 | Sequence: 2
+SEND ACK  34  - 3 or more segments in sequence | Time: 162.2143
+Time: 163.09 | Event: Received Segment | Num: 34 | Error: 0
+Time: 163.09 | Event: Segment Added | Num: 34 | Buffer: [34]
+Time: 163.09 | Event: Next Expected Update | Buffer:  [34] | Next Expected: 35 Sequence: 0
+Time: 164.09 | Event: Received Segment | Num: 35 | Error: 0
+Time: 164.10 | Event: Segment Added | Num: 35 | Buffer: [34, 35]
+Time: 164.10 | Event: Next Expected Update | Buffer:  [34, 35] | Next Expected: 36 Sequence: 1
+SEND ACK  36  - Without a correct reception (2s) | Time: 166.20
+Time: 167.22 | Event: Received Segment | Num: 36 | Error: 0
+Time: 167.22 | Event: Segment Added | Num: 36 | Buffer: [34, 35, 36]
+Time: 167.22 | Event: 3 or more segments in sequence | Buffer read:  [34, 35, 36] => [] | Next Expected: 37 | Sequence: 2
+SEND ACK  37  - 3 or more segments in sequence | Time: 167.3450
+Time: 168.22 | Event: Received Segment | Num: 37 | Error: 1
+Time: 169.23 | Event: Received Segment | Num: 38 | Error: 0
+Time: 169.23 | Event: Segment Added | Num: 38 | Buffer: [38]
+SEND ACK  37  - Without a correct reception (2s) | Time: 169.45
+Time: 170.24 | Event: Received Segment | Num: 39 | Error: 0
+Time: 170.24 | Event: Segment Added | Num: 39 | Buffer: [38, 39]
+SEND ACK  37  - Without a correct reception (2s) | Time: 171.56
+SEND ACK  37  - Without a correct reception (2s) | Time: 173.66
+SEND ACK  37  - Without a correct reception (2s) | Time: 175.77
+Time: 175.80 | Event: Received Segment | Num: 37 | Error: 0
+Time: 175.80 | Event: Segment Added | Num: 37 | Buffer: [37, 38, 39]
+Time: 175.80 | Event: 3 or more segments in sequence | Buffer read:  [37, 38, 39] => [] | Next Expected: 40 | Sequence: 2
+SEND ACK  40  - 3 or more segments in sequence | Time: 175.9127
+Time: 176.78 | Event: Received Segment | Num: 38 | Error: 0
+Time: 176.93 | Event: Received Segment | Num: 40 | Error: 0
+Time: 176.94 | Event: Segment Added | Num: 40 | Buffer: [40]
+Time: 176.95 | Event: Next Expected Update | Buffer:  [40] | Next Expected: 41 Sequence: 0
+SEND ACK  41  - Without a correct reception (2s) | Time: 179.06
+Time: 180.08 | Event: Received Segment | Num: 41 | Error: 1
+Time: 181.08 | Event: Received Segment | Num: 42 | Error: 0
+Time: 181.08 | Event: Segment Added | Num: 42 | Buffer: [40, 42]
+SEND ACK  41  - Without a correct reception (2s) | Time: 181.16
+SEND ACK  41  - Without a correct reception (2s) | Time: 183.26
+SEND ACK  41  - Without a correct reception (2s) | Time: 185.36
+SEND ACK  41  - Without a correct reception (2s) | Time: 187.47
+Time: 188.69 | Event: Received Segment | Num: 41 | Error: 0
+Time: 188.69 | Event: Segment Added | Num: 41 | Buffer: [40, 41, 42]
+Time: 188.70 | Event: 3 or more segments in sequence | Buffer read:  [40, 41, 42] => [] | Next Expected: 43 | Sequence: 2
+SEND ACK  43  - 3 or more segments in sequence | Time: 188.8279
+Time: 189.69 | Event: Received Segment | Num: 42 | Error: 0
+Time: 189.84 | Event: Received Segment | Num: 43 | Error: 1
+SEND ACK  43  - Without a correct reception (2s) | Time: 190.94
+SEND ACK  43  - Without a correct reception (2s) | Time: 193.04
+SEND ACK  43  - Without a correct reception (2s) | Time: 195.14
+SEND ACK  43  - Without a correct reception (2s) | Time: 197.26
+Time: 198.45 | Event: Received Segment | Num: 43 | Error: 0
+Time: 198.45 | Event: Segment Added | Num: 43 | Buffer: [43]
+Time: 198.45 | Event: Next Expected Update | Buffer:  [43] | Next Expected: 44 Sequence: 0
+SEND ACK  44  - Without a correct reception (2s) | Time: 200.55
+Time: 201.57 | Event: Received Segment | Num: 44 | Error: 0
+Time: 201.57 | Event: Segment Added | Num: 44 | Buffer: [43, 44]
+Time: 201.57 | Event: Next Expected Update | Buffer:  [43, 44] | Next Expected: 45 Sequence: 1
+Time: 202.57 | Event: Received Segment | Num: 45 | Error: 0
+Time: 202.58 | Event: Segment Added | Num: 45 | Buffer: [43, 44, 45]
+Time: 202.58 | Event: 3 or more segments in sequence | Buffer read:  [43, 44, 45] => [] | Next Expected: 46 | Sequence: 2
+SEND ACK  46  - 3 or more segments in sequence | Time: 202.7028
+Time: 203.72 | Event: Received Segment | Num: 46 | Error: 0
+Time: 203.73 | Event: Segment Added | Num: 46 | Buffer: [46]
+Time: 203.73 | Event: Next Expected Update | Buffer:  [46] | Next Expected: 47 Sequence: 0
+SEND ACK  47  - Without a correct reception (2s) | Time: 205.84
+SEND ACK  47  - Without a correct reception (2s) | Time: 207.94
+SEND ACK  47  - Without a correct reception (2s) | Time: 210.04
+SEND ACK  47  - Without a correct reception (2s) | Time: 212.14
+SEND ACK  47  - Without a correct reception (2s) | Time: 214.25
+SEND ACK  47  - Without a correct reception (2s) | Time: 216.35
+SEND ACK  47  - Without a correct reception (2s) | Time: 218.46
+SEND ACK  47  - Without a correct reception (2s) | Time: 220.56
+SEND ACK  47  - Without a correct reception (2s) | Time: 222.66
+SEND ACK  47  - Without a correct reception (2s) | Time: 224.76
+SEND ACK  47  - Without a correct reception (2s) | Time: 226.87

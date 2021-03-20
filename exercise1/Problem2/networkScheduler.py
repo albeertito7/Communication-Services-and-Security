@@ -6,18 +6,21 @@ from functools import partial
 
 # global vars
 VERBOSE = DISPLAY = False
-ALGORITHM_CHOICES = ('FQ', 'WFQ')
+ALGORITHM_CHOICES = ('FQ', 'WFQ') # possible algorithms
 
-def parse_arguments():
-    parser = argparse.ArgumentParser(prog="Network Scheduling Script", description="Script implementing a packet-based network scheduling algorithm called Fair Queueing and its Weighted version.", formatter_class=RawTextHelpFormatter)
+def parse_arguments(): # specific arguments parser
+    parser = argparse.ArgumentParser(prog="Network Scheduling Script", description="Script implementing a packet-based network scheduling algorithm called Fair Queueing and its Weighted version. Also it is prepared to manage other network scheduling algorithms.", formatter_class=RawTextHelpFormatter)
 
     # Required Arguments
-    parser.add_argument('file', type=lambda x: is_file(parser, x), help='File name containing the list of triplets to be scheduled.')
+    parser.add_argument('file', type=lambda x: is_file(parser, x), help='File path name containing the list of triplets to be scheduled where each one represents:\n'
+        '   1. Arrival time (float)\n'
+        '   2. Packet length (float)\n'
+        '   3. Flow/Stream identifier (integer >= 1)')
     
     # Optional Arguments
     parser.add_argument('-s', dest="type", type=str, default="FQ", choices=ALGORITHM_CHOICES, required=False, help="String to specify the network scheduling algorithm policy. If not specified will be executed the Fair Queueing as a default option.\n  · FQ = Fair Queueing\n  · WFQ = Weighted Fair Queueing.\n")
-    parser.add_argument('-f', dest="flows", type=str, required=False, help='Fraction of the bandwidth assigned to each flow (as a percentage). Comma separated. As an example: 50,10,40 \nWill only be taken into account when the policy {WFQ} is specified.')
-    parser.add_argument('-v', dest='verbose', action='store_true', default=False, required=False, help='Display additional details about the execution such as the packets received and delivered at each time.')
+    parser.add_argument('-f', dest="flows", type=str, required=False, help='Fraction of the bandwidth assigned to each flow (as a percentage)(float). Comma separated. As an example: 50,10,40 \nWill only be taken into account when the policy {WFQ} is specified.')
+    parser.add_argument('-v', '--verbose', dest='verbose', action='store_true', default=False, required=False, help='Display additional details about the execution such as the packets received and delivered at each time.')
     #parser.add_argument('-o', dest='outFile', type=str, required=False, help='Output file name containing the results')
     #parser.add_argument('-d', dest="display", action='store_true', default=False, required=False, help='Display results on the screen')
 
@@ -27,7 +30,7 @@ def parse_arguments():
     VERBOSE = args.verbose
 
     data = [list(map(float, [num] + line.strip().split())) for num, line in enumerate(args.file.readlines(), 1)]
-    flows = [x/100 for x in list(map(float, args.flows.split(",")))] if args.flows and args.type == ALGORITHM_CHOICES[1] else None
+    flows = [x*0.01 for x in list(map(float, args.flows.split(",")))] if args.flows and args.type == ALGORITHM_CHOICES[1] else None
 
     if args.type == args.type == ALGORITHM_CHOICES[1] and len(set(map(itemgetter(3), data))) != len(flows):
         parser.error("The number of flows are not consistent with the arguments done.")
@@ -42,15 +45,6 @@ def parse_arguments():
 def is_file(parser, file):
     if not os.path.isfile(file): parser.error("File path '{}' does not exist. Exiting...".format(file))
     return open(file, 'r')
-
-def errorHandler():
-    return "Error: scheduler mechanism not specified"
-
-def schedule(data, flows=None, type="FQ"):
-    return {
-        "FQ": partial(fair_queueing, data),
-        "WFQ": partial(weighted_fair_queueing, data, flows)
-    }.get(type, errorHandler)()
 
 def fair_queueing(data, timeFinish=0, packets_received=[], packets_delivered=[]):
     
@@ -103,9 +97,18 @@ def weighted_fair_queueing(data, flows, timeFinish=0, packets_received=[], packe
     if VERBOSE: print("Packet delivered: ", packet_to_deliver+[timeFinish]), print('-' * os.get_terminal_size().columns)
 
     return weighted_fair_queueing(data, flows, timeFinish, packets_received, packets_delivered)
+    
+def errorHandler():
+    return "Error: scheduler mechanism not specified"
+
+def schedule(data, flows=None, type="FQ"): # switcher to scale the script
+    return {
+        "FQ": partial(fair_queueing, data), # fair queueing algorithm
+        "WFQ": partial(weighted_fair_queueing, data, flows) # weighted fair queueing algorithm
+    }.get(type, errorHandler)()
 
 def printResult(data): 
-    print("Result: ", [x[0] for x in data])
+    print("Result: ", [int(x[0]) for x in data])
 
 def main():
     args = parse_arguments() # parse arguments

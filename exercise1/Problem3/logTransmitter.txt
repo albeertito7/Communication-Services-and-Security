@@ -1,0 +1,188 @@
+Time: 1.00 | Event: Sent segment | Num: 0 | EffWin: 0.00 | CWND: 1.00 | RTT: 10.00 | sRTT: 10.00 | TOut: 10.00 | LastACK: -1 | LastSent: 0
+Time: 1.11 | Event: Ack received | Num: 0 | EffWin: 0.00 | CWND: 1.00 | RTT: 10.00 | sRTT: 10.00 | TOut: 10.00 | LastACK: -1 | LastSent: 0
+ACK Num: 1 recvd | Retransmission: False => UPDATE sRTT
+Time: 3.22 | Event: Ack received | Num: 1 | EffWin: 2.00 | CWND: 2.00 | RTT: 3.22 | sRTT: 8.64 | TOut: 17.29 | LastACK: 0 | LastSent: 0
+Time: 4.22 | Event: Sent segment | Num: 1 | EffWin: 1.00 | CWND: 2.00 | RTT: 3.22 | sRTT: 8.64 | TOut: 17.29 | LastACK: 0 | LastSent: 1
+Time: 5.22 | Event: Sent segment lost | Num: 2 | EffWin: 0.00 | CWND: 2.00 | RTT: 3.22 | sRTT: 8.64 | TOut: 17.29 | LastACK: 0 | LastSent: 2
+ACK Num: 2 recvd | Retransmission: False => UPDATE sRTT
+Time: 6.34 | Event: Ack received | Num: 2 | EffWin: 2.00 | CWND: 3.00 | RTT: 3.12 | sRTT: 7.54 | TOut: 15.08 | LastACK: 1 | LastSent: 2
+Time: 7.34 | Event: Sent segment lost | Num: 3 | EffWin: 1.00 | CWND: 3.00 | RTT: 3.12 | sRTT: 7.54 | TOut: 15.08 | LastACK: 1 | LastSent: 3
+Time: 8.34 | Event: Sent segment | Num: 4 | EffWin: 0.00 | CWND: 3.00 | RTT: 3.12 | sRTT: 7.54 | TOut: 15.08 | LastACK: 1 | LastSent: 4
+Time: 8.44 | Event: Ack received | Num: 2 | EffWin: 0.00 | CWND: 3.00 | RTT: 3.12 | sRTT: 7.54 | TOut: 15.08 | LastACK: 1 | LastSent: 4
+Time: 10.55 | Event: Ack received | Num: 2 | EffWin: 0.00 | CWND: 3.00 | RTT: 3.12 | sRTT: 7.54 | TOut: 15.08 | LastACK: 1 | LastSent: 4
+Time: 12.65 | Event: Ack received | Num: 2 | EffWin: 0.00 | CWND: 3.00 | RTT: 3.12 | sRTT: 7.54 | TOut: 15.08 | LastACK: 1 | LastSent: 4
+Time: 14.75 | Event: Ack received | Num: 2 | EffWin: 0.00 | CWND: 3.00 | RTT: 3.12 | sRTT: 7.54 | TOut: 15.08 | LastACK: 1 | LastSent: 4
+Time: 16.85 | Event: Ack received | Num: 2 | EffWin: 0.00 | CWND: 3.00 | RTT: 3.12 | sRTT: 7.54 | TOut: 15.08 | LastACK: 1 | LastSent: 4
+Time: 18.95 | Event: Ack received | Num: 2 | EffWin: 0.00 | CWND: 3.00 | RTT: 3.12 | sRTT: 7.54 | TOut: 15.08 | LastACK: 1 | LastSent: 4
+Time: 21.06 | Event: Ack received | Num: 2 | EffWin: 0.00 | CWND: 3.00 | RTT: 3.12 | sRTT: 7.54 | TOut: 15.08 | LastACK: 1 | LastSent: 4
+Time: 22.43 | Event: Segment timeOut | Num: 3 | RetransBuffer: [] + [ 3 ] | EffWin: 0.00 | CWND: 3.00 | RTT: 3.12 | sRTT: 7.54 | TOut: 15.08 | LastACK: 1 | LastSent: 4
+Time: 22.52 | Event: Segment timeOut | Num: 2 | RetransBuffer: [] + [ 2 ] | EffWin: 0.00 | CWND: 3.00 | RTT: 3.12 | sRTT: 7.54 | TOut: 15.08 | LastACK: 1 | LastSent: 4
+Time: 23.16 | Event: Ack received | Num: 2 | EffWin: 0.00 | CWND: 3.00 | RTT: 3.12 | sRTT: 7.54 | TOut: 15.08 | LastACK: 1 | LastSent: 4
+Time: 23.43 | Event: Segment timeOut | Num: 4 | RetransBuffer: [] + [ 4 ] | EffWin: 0.00 | CWND: 3.00 | RTT: 3.12 | sRTT: 7.54 | TOut: 15.08 | LastACK: 1 | LastSent: 4
+Time: 23.46 | Event: Segment retransmission | Num: 3 | EffWin: 0.00 | CWND: 3.00 | RTT: 3.12 | sRTT: 7.54 | TOut: 15.08 | LastACK: 1 | LastSent: 4
+Time: 23.54 | Event: Segment retransmission | Num: 2 | EffWin: -2.00 | CWND: 1.00 | RTT: 3.12 | sRTT: 7.54 | TOut: 15.08 | LastACK: 1 | LastSent: 4
+ACK Num: 5 recvd | Retransmission: True => NOT update sRTT
+Time: 23.67 | Event: Ack received | Num: 5 | EffWin: 2.00 | CWND: 2.00 | RTT: 3.12 | sRTT: 7.54 | TOut: 15.08 | LastACK: 4 | LastSent: 4
+Time: 24.44 | Event: Segment retransmission | Num: 4 | EffWin: 1.00 | CWND: 2.00 | RTT: 3.12 | sRTT: 7.54 | TOut: 15.08 | LastACK: 4 | LastSent: 5
+Time: 24.67 | Event: Sent segment lost | Num: 5 | EffWin: 0.00 | CWND: 1.00 | RTT: 3.12 | sRTT: 7.54 | TOut: 15.08 | LastACK: 4 | LastSent: 5
+Time: 25.78 | Event: Ack received | Num: 5 | EffWin: 0.00 | CWND: 1.00 | RTT: 3.12 | sRTT: 7.54 | TOut: 15.08 | LastACK: 4 | LastSent: 5
+Time: 27.88 | Event: Ack received | Num: 5 | EffWin: 0.00 | CWND: 1.00 | RTT: 3.12 | sRTT: 7.54 | TOut: 15.08 | LastACK: 4 | LastSent: 5
+Time: 29.98 | Event: Ack received | Num: 5 | EffWin: 0.00 | CWND: 1.00 | RTT: 3.12 | sRTT: 7.54 | TOut: 15.08 | LastACK: 4 | LastSent: 5
+Time: 32.09 | Event: Ack received | Num: 5 | EffWin: 0.00 | CWND: 1.00 | RTT: 3.12 | sRTT: 7.54 | TOut: 15.08 | LastACK: 4 | LastSent: 5
+Time: 34.19 | Event: Ack received | Num: 5 | EffWin: 0.00 | CWND: 1.00 | RTT: 3.12 | sRTT: 7.54 | TOut: 15.08 | LastACK: 4 | LastSent: 5
+Time: 36.30 | Event: Ack received | Num: 5 | EffWin: 0.00 | CWND: 1.00 | RTT: 3.12 | sRTT: 7.54 | TOut: 15.08 | LastACK: 4 | LastSent: 5
+Time: 38.40 | Event: Ack received | Num: 5 | EffWin: 0.00 | CWND: 1.00 | RTT: 3.12 | sRTT: 7.54 | TOut: 15.08 | LastACK: 4 | LastSent: 5
+Time: 39.76 | Event: Segment timeOut | Num: 5 | RetransBuffer: [] + [ 5 ] | EffWin: 0.00 | CWND: 1.00 | RTT: 3.12 | sRTT: 7.54 | TOut: 15.08 | LastACK: 4 | LastSent: 5
+Time: 40.50 | Event: Ack received | Num: 5 | EffWin: 0.00 | CWND: 1.00 | RTT: 3.12 | sRTT: 7.54 | TOut: 15.08 | LastACK: 4 | LastSent: 5
+Time: 40.79 | Event: Segment retransmission | Num: 5 | EffWin: 0.00 | CWND: 1.00 | RTT: 3.12 | sRTT: 7.54 | TOut: 15.08 | LastACK: 4 | LastSent: 5
+ACK Num: 6 recvd | Retransmission: True => NOT update sRTT
+Time: 42.92 | Event: Ack received | Num: 6 | EffWin: 2.00 | CWND: 2.00 | RTT: 3.12 | sRTT: 7.54 | TOut: 15.08 | LastACK: 5 | LastSent: 5
+Time: 43.92 | Event: Sent segment | Num: 6 | EffWin: 1.00 | CWND: 2.00 | RTT: 3.12 | sRTT: 7.54 | TOut: 15.08 | LastACK: 5 | LastSent: 6
+Time: 44.93 | Event: Sent segment lost | Num: 7 | EffWin: 0.00 | CWND: 2.00 | RTT: 3.12 | sRTT: 7.54 | TOut: 15.08 | LastACK: 5 | LastSent: 7
+ACK Num: 7 recvd | Retransmission: False => UPDATE sRTT
+Time: 46.05 | Event: Ack received | Num: 7 | EffWin: 1.00 | CWND: 2.50 | RTT: 3.13 | sRTT: 6.66 | TOut: 13.31 | LastACK: 6 | LastSent: 7
+Time: 47.05 | Event: Sent segment | Num: 8 | EffWin: 0.00 | CWND: 2.50 | RTT: 3.13 | sRTT: 6.66 | TOut: 13.31 | LastACK: 6 | LastSent: 8
+Time: 48.15 | Event: Ack received | Num: 7 | EffWin: 0.00 | CWND: 2.50 | RTT: 3.13 | sRTT: 6.66 | TOut: 13.31 | LastACK: 6 | LastSent: 8
+Time: 50.25 | Event: Ack received | Num: 7 | EffWin: 0.00 | CWND: 2.50 | RTT: 3.13 | sRTT: 6.66 | TOut: 13.31 | LastACK: 6 | LastSent: 8
+Time: 52.35 | Event: Ack received | Num: 7 | EffWin: 0.00 | CWND: 2.50 | RTT: 3.13 | sRTT: 6.66 | TOut: 13.31 | LastACK: 6 | LastSent: 8
+Time: 54.46 | Event: Ack received | Num: 7 | EffWin: 0.00 | CWND: 2.50 | RTT: 3.13 | sRTT: 6.66 | TOut: 13.31 | LastACK: 6 | LastSent: 8
+Time: 56.56 | Event: Ack received | Num: 7 | EffWin: 0.00 | CWND: 2.50 | RTT: 3.13 | sRTT: 6.66 | TOut: 13.31 | LastACK: 6 | LastSent: 8
+Time: 58.67 | Event: Ack received | Num: 7 | EffWin: 0.00 | CWND: 2.50 | RTT: 3.13 | sRTT: 6.66 | TOut: 13.31 | LastACK: 6 | LastSent: 8
+Time: 60.02 | Event: Segment timeOut | Num: 7 | RetransBuffer: [] + [ 7 ] | EffWin: 0.00 | CWND: 2.50 | RTT: 3.13 | sRTT: 6.66 | TOut: 13.31 | LastACK: 6 | LastSent: 8
+Time: 60.38 | Event: Segment timeOut | Num: 8 | RetransBuffer: [] + [ 8 ] | EffWin: 0.00 | CWND: 2.50 | RTT: 3.13 | sRTT: 6.66 | TOut: 13.31 | LastACK: 6 | LastSent: 8
+Time: 60.77 | Event: Ack received | Num: 7 | EffWin: 0.00 | CWND: 2.50 | RTT: 3.13 | sRTT: 6.66 | TOut: 13.31 | LastACK: 6 | LastSent: 8
+Time: 61.04 | Event: Segment retransmission | Num: 7 | EffWin: 0.00 | CWND: 2.50 | RTT: 3.13 | sRTT: 6.66 | TOut: 13.31 | LastACK: 6 | LastSent: 8
+ACK Num: 9 recvd | Retransmission: True => NOT update sRTT
+Time: 61.19 | Event: Ack received | Num: 9 | EffWin: 2.00 | CWND: 2.00 | RTT: 3.13 | sRTT: 6.66 | TOut: 13.31 | LastACK: 8 | LastSent: 8
+Time: 61.39 | Event: Segment retransmission | Num: 8 | EffWin: 1.00 | CWND: 2.00 | RTT: 3.13 | sRTT: 6.66 | TOut: 13.31 | LastACK: 8 | LastSent: 9
+Time: 62.19 | Event: Sent segment | Num: 9 | EffWin: 0.00 | CWND: 1.00 | RTT: 3.13 | sRTT: 6.66 | TOut: 13.31 | LastACK: 8 | LastSent: 9
+ACK Num: 10 recvd | Retransmission: False => UPDATE sRTT
+Time: 64.34 | Event: Ack received | Num: 10 | EffWin: 2.00 | CWND: 2.00 | RTT: 3.15 | sRTT: 5.96 | TOut: 11.91 | LastACK: 9 | LastSent: 9
+Time: 65.34 | Event: Sent segment | Num: 10 | EffWin: 1.00 | CWND: 2.00 | RTT: 3.15 | sRTT: 5.96 | TOut: 11.91 | LastACK: 9 | LastSent: 10
+Time: 66.34 | Event: Sent segment lost | Num: 11 | EffWin: 0.00 | CWND: 2.00 | RTT: 3.15 | sRTT: 5.96 | TOut: 11.91 | LastACK: 9 | LastSent: 11
+ACK Num: 11 recvd | Retransmission: False => UPDATE sRTT
+Time: 67.46 | Event: Ack received | Num: 11 | EffWin: 1.00 | CWND: 2.50 | RTT: 3.12 | sRTT: 5.39 | TOut: 10.78 | LastACK: 10 | LastSent: 11
+Time: 68.46 | Event: Sent segment | Num: 12 | EffWin: 0.00 | CWND: 2.50 | RTT: 3.12 | sRTT: 5.39 | TOut: 10.78 | LastACK: 10 | LastSent: 12
+Time: 69.55 | Event: Ack received | Num: 11 | EffWin: 0.00 | CWND: 2.50 | RTT: 3.12 | sRTT: 5.39 | TOut: 10.78 | LastACK: 10 | LastSent: 12
+Time: 71.65 | Event: Ack received | Num: 11 | EffWin: 0.00 | CWND: 2.50 | RTT: 3.12 | sRTT: 5.39 | TOut: 10.78 | LastACK: 10 | LastSent: 12
+Time: 73.76 | Event: Ack received | Num: 11 | EffWin: 0.00 | CWND: 2.50 | RTT: 3.12 | sRTT: 5.39 | TOut: 10.78 | LastACK: 10 | LastSent: 12
+Time: 75.86 | Event: Ack received | Num: 11 | EffWin: 0.00 | CWND: 2.50 | RTT: 3.12 | sRTT: 5.39 | TOut: 10.78 | LastACK: 10 | LastSent: 12
+Time: 77.97 | Event: Ack received | Num: 11 | EffWin: 0.00 | CWND: 2.50 | RTT: 3.12 | sRTT: 5.39 | TOut: 10.78 | LastACK: 10 | LastSent: 12
+Time: 78.27 | Event: Segment timeOut | Num: 11 | RetransBuffer: [] + [ 11 ] | EffWin: 0.00 | CWND: 2.50 | RTT: 3.12 | sRTT: 5.39 | TOut: 10.78 | LastACK: 10 | LastSent: 12
+Time: 79.25 | Event: Segment timeOut | Num: 12 | RetransBuffer: [] + [ 12 ] | EffWin: 0.00 | CWND: 2.50 | RTT: 3.12 | sRTT: 5.39 | TOut: 10.78 | LastACK: 10 | LastSent: 12
+Time: 79.29 | Event: Segment retransmission | Num: 11 | EffWin: 0.00 | CWND: 2.50 | RTT: 3.12 | sRTT: 5.39 | TOut: 10.78 | LastACK: 10 | LastSent: 12
+ACK Num: 13 recvd | Retransmission: True => NOT update sRTT
+Time: 79.43 | Event: Ack received | Num: 13 | EffWin: 2.00 | CWND: 2.00 | RTT: 3.12 | sRTT: 5.39 | TOut: 10.78 | LastACK: 12 | LastSent: 12
+Time: 80.26 | Event: Segment retransmission | Num: 12 | EffWin: 1.00 | CWND: 2.00 | RTT: 3.12 | sRTT: 5.39 | TOut: 10.78 | LastACK: 12 | LastSent: 13
+Time: 80.43 | Event: Sent segment lost | Num: 13 | EffWin: 0.00 | CWND: 1.00 | RTT: 3.12 | sRTT: 5.39 | TOut: 10.78 | LastACK: 12 | LastSent: 13
+Time: 81.54 | Event: Ack received | Num: 13 | EffWin: 0.00 | CWND: 1.00 | RTT: 3.12 | sRTT: 5.39 | TOut: 10.78 | LastACK: 12 | LastSent: 13
+Time: 83.64 | Event: Ack received | Num: 13 | EffWin: 0.00 | CWND: 1.00 | RTT: 3.12 | sRTT: 5.39 | TOut: 10.78 | LastACK: 12 | LastSent: 13
+Time: 85.74 | Event: Ack received | Num: 13 | EffWin: 0.00 | CWND: 1.00 | RTT: 3.12 | sRTT: 5.39 | TOut: 10.78 | LastACK: 12 | LastSent: 13
+Time: 87.85 | Event: Ack received | Num: 13 | EffWin: 0.00 | CWND: 1.00 | RTT: 3.12 | sRTT: 5.39 | TOut: 10.78 | LastACK: 12 | LastSent: 13
+Time: 89.95 | Event: Ack received | Num: 13 | EffWin: 0.00 | CWND: 1.00 | RTT: 3.12 | sRTT: 5.39 | TOut: 10.78 | LastACK: 12 | LastSent: 13
+Time: 91.22 | Event: Segment timeOut | Num: 13 | RetransBuffer: [] + [ 13 ] | EffWin: 0.00 | CWND: 1.00 | RTT: 3.12 | sRTT: 5.39 | TOut: 10.78 | LastACK: 12 | LastSent: 13
+Time: 92.05 | Event: Ack received | Num: 13 | EffWin: 0.00 | CWND: 1.00 | RTT: 3.12 | sRTT: 5.39 | TOut: 10.78 | LastACK: 12 | LastSent: 13
+Time: 92.25 | Event: Segment retransmission | Num: 13 | EffWin: 0.00 | CWND: 1.00 | RTT: 3.12 | sRTT: 5.39 | TOut: 10.78 | LastACK: 12 | LastSent: 13
+ACK Num: 14 recvd | Retransmission: True => NOT update sRTT
+Time: 94.36 | Event: Ack received | Num: 14 | EffWin: 2.00 | CWND: 2.00 | RTT: 3.12 | sRTT: 5.39 | TOut: 10.78 | LastACK: 13 | LastSent: 13
+Time: 95.36 | Event: Sent segment | Num: 14 | EffWin: 1.00 | CWND: 2.00 | RTT: 3.12 | sRTT: 5.39 | TOut: 10.78 | LastACK: 13 | LastSent: 14
+Time: 96.36 | Event: Sent segment | Num: 15 | EffWin: 0.00 | CWND: 2.00 | RTT: 3.12 | sRTT: 5.39 | TOut: 10.78 | LastACK: 13 | LastSent: 15
+ACK Num: 16 recvd | Retransmission: False => UPDATE sRTT
+Time: 96.52 | Event: Ack received | Num: 16 | EffWin: 2.00 | CWND: 2.50 | RTT: 1.16 | sRTT: 4.54 | TOut: 9.08 | LastACK: 15 | LastSent: 15
+Time: 97.52 | Event: Sent segment | Num: 16 | EffWin: 1.00 | CWND: 2.50 | RTT: 1.16 | sRTT: 4.54 | TOut: 9.08 | LastACK: 15 | LastSent: 16
+Time: 98.53 | Event: Sent segment lost | Num: 17 | EffWin: 0.00 | CWND: 2.50 | RTT: 1.16 | sRTT: 4.54 | TOut: 9.08 | LastACK: 15 | LastSent: 17
+ACK Num: 17 recvd | Retransmission: False => UPDATE sRTT
+Time: 99.66 | Event: Ack received | Num: 17 | EffWin: 1.00 | CWND: 2.90 | RTT: 3.14 | sRTT: 4.26 | TOut: 8.52 | LastACK: 16 | LastSent: 17
+Time: 100.66 | Event: Sent segment | Num: 18 | EffWin: 0.00 | CWND: 2.90 | RTT: 3.14 | sRTT: 4.26 | TOut: 8.52 | LastACK: 16 | LastSent: 18
+Time: 101.75 | Event: Ack received | Num: 17 | EffWin: 0.00 | CWND: 2.90 | RTT: 3.14 | sRTT: 4.26 | TOut: 8.52 | LastACK: 16 | LastSent: 18
+Time: 103.86 | Event: Ack received | Num: 17 | EffWin: 0.00 | CWND: 2.90 | RTT: 3.14 | sRTT: 4.26 | TOut: 8.52 | LastACK: 16 | LastSent: 18
+Time: 105.96 | Event: Ack received | Num: 17 | EffWin: 0.00 | CWND: 2.90 | RTT: 3.14 | sRTT: 4.26 | TOut: 8.52 | LastACK: 16 | LastSent: 18
+Time: 107.62 | Event: Segment timeOut | Num: 17 | RetransBuffer: [] + [ 17 ] | EffWin: 0.00 | CWND: 2.90 | RTT: 3.14 | sRTT: 4.26 | TOut: 8.52 | LastACK: 16 | LastSent: 18
+Time: 108.06 | Event: Ack received | Num: 17 | EffWin: 0.00 | CWND: 2.90 | RTT: 3.14 | sRTT: 4.26 | TOut: 8.52 | LastACK: 16 | LastSent: 18
+Time: 108.65 | Event: Segment retransmission | Num: 17 | EffWin: 0.00 | CWND: 2.90 | RTT: 3.14 | sRTT: 4.26 | TOut: 8.52 | LastACK: 16 | LastSent: 18
+ACK Num: 19 recvd | Retransmission: False => UPDATE sRTT
+Time: 108.77 | Event: Ack received | Num: 19 | EffWin: 2.00 | CWND: 2.00 | RTT: 9.12 | sRTT: 5.23 | TOut: 10.47 | LastACK: 18 | LastSent: 18
+Time: 109.78 | Event: Sent segment lost | Num: 19 | EffWin: 1.00 | CWND: 2.00 | RTT: 9.12 | sRTT: 5.23 | TOut: 10.47 | LastACK: 18 | LastSent: 19
+Time: 110.78 | Event: Sent segment | Num: 20 | EffWin: 0.00 | CWND: 2.00 | RTT: 9.12 | sRTT: 5.23 | TOut: 10.47 | LastACK: 18 | LastSent: 20
+Time: 110.89 | Event: Ack received | Num: 19 | EffWin: 0.00 | CWND: 2.00 | RTT: 9.12 | sRTT: 5.23 | TOut: 10.47 | LastACK: 18 | LastSent: 20
+Time: 112.99 | Event: Ack received | Num: 19 | EffWin: 0.00 | CWND: 2.00 | RTT: 9.12 | sRTT: 5.23 | TOut: 10.47 | LastACK: 18 | LastSent: 20
+Time: 115.09 | Event: Ack received | Num: 19 | EffWin: 0.00 | CWND: 2.00 | RTT: 9.12 | sRTT: 5.23 | TOut: 10.47 | LastACK: 18 | LastSent: 20
+Time: 117.19 | Event: Ack received | Num: 19 | EffWin: 0.00 | CWND: 2.00 | RTT: 9.12 | sRTT: 5.23 | TOut: 10.47 | LastACK: 18 | LastSent: 20
+Time: 119.30 | Event: Ack received | Num: 19 | EffWin: 0.00 | CWND: 2.00 | RTT: 9.12 | sRTT: 5.23 | TOut: 10.47 | LastACK: 18 | LastSent: 20
+Time: 120.25 | Event: Segment timeOut | Num: 19 | RetransBuffer: [] + [ 19 ] | EffWin: 0.00 | CWND: 2.00 | RTT: 9.12 | sRTT: 5.23 | TOut: 10.47 | LastACK: 18 | LastSent: 20
+Time: 121.26 | Event: Segment timeOut | Num: 20 | RetransBuffer: [] + [ 20 ] | EffWin: 0.00 | CWND: 2.00 | RTT: 9.12 | sRTT: 5.23 | TOut: 10.47 | LastACK: 18 | LastSent: 20
+Time: 121.28 | Event: Segment retransmission | Num: 19 | EffWin: 0.00 | CWND: 2.00 | RTT: 9.12 | sRTT: 5.23 | TOut: 10.47 | LastACK: 18 | LastSent: 20
+Time: 121.41 | Event: Ack received | Num: 19 | EffWin: -1.00 | CWND: 1.00 | RTT: 9.12 | sRTT: 5.23 | TOut: 10.47 | LastACK: 18 | LastSent: 20
+Time: 122.28 | Event: Segment retransmission | Num: 20 | EffWin: -1.00 | CWND: 1.00 | RTT: 9.12 | sRTT: 5.23 | TOut: 10.47 | LastACK: 18 | LastSent: 20
+ACK Num: 21 recvd | Retransmission: True => NOT update sRTT
+Time: 123.51 | Event: Ack received | Num: 21 | EffWin: 2.00 | CWND: 2.00 | RTT: 9.12 | sRTT: 5.23 | TOut: 10.47 | LastACK: 20 | LastSent: 20
+Time: 124.52 | Event: Sent segment | Num: 21 | EffWin: 1.00 | CWND: 2.00 | RTT: 9.12 | sRTT: 5.23 | TOut: 10.47 | LastACK: 20 | LastSent: 21
+ACK Num: 22 recvd | Retransmission: False => UPDATE sRTT
+Time: 124.64 | Event: Ack received | Num: 22 | EffWin: 1.00 | CWND: 2.50 | RTT: 1.12 | sRTT: 4.41 | TOut: 8.82 | LastACK: 21 | LastSent: 22
+Time: 125.52 | Event: Sent segment | Num: 22 | EffWin: 1.00 | CWND: 2.50 | RTT: 1.12 | sRTT: 4.41 | TOut: 8.82 | LastACK: 21 | LastSent: 22
+Time: 126.53 | Event: Sent segment lost | Num: 23 | EffWin: 0.00 | CWND: 2.50 | RTT: 1.12 | sRTT: 4.41 | TOut: 8.82 | LastACK: 21 | LastSent: 23
+ACK Num: 23 recvd | Retransmission: False => UPDATE sRTT
+Time: 127.66 | Event: Ack received | Num: 23 | EffWin: 1.00 | CWND: 2.90 | RTT: 3.14 | sRTT: 4.16 | TOut: 8.31 | LastACK: 22 | LastSent: 23
+Time: 128.66 | Event: Sent segment | Num: 24 | EffWin: 0.00 | CWND: 2.90 | RTT: 3.14 | sRTT: 4.16 | TOut: 8.31 | LastACK: 22 | LastSent: 24
+Time: 129.75 | Event: Ack received | Num: 23 | EffWin: 0.00 | CWND: 2.90 | RTT: 3.14 | sRTT: 4.16 | TOut: 8.31 | LastACK: 22 | LastSent: 24
+Time: 131.86 | Event: Ack received | Num: 23 | EffWin: 0.00 | CWND: 2.90 | RTT: 3.14 | sRTT: 4.16 | TOut: 8.31 | LastACK: 22 | LastSent: 24
+Time: 133.96 | Event: Ack received | Num: 23 | EffWin: 0.00 | CWND: 2.90 | RTT: 3.14 | sRTT: 4.16 | TOut: 8.31 | LastACK: 22 | LastSent: 24
+Time: 135.35 | Event: Segment timeOut | Num: 23 | RetransBuffer: [] + [ 23 ] | EffWin: 0.00 | CWND: 2.90 | RTT: 3.14 | sRTT: 4.16 | TOut: 8.31 | LastACK: 22 | LastSent: 24
+Time: 136.07 | Event: Ack received | Num: 23 | EffWin: 0.00 | CWND: 2.90 | RTT: 3.14 | sRTT: 4.16 | TOut: 8.31 | LastACK: 22 | LastSent: 24
+Time: 136.38 | Event: Segment retransmission | Num: 23 | EffWin: 0.00 | CWND: 2.90 | RTT: 3.14 | sRTT: 4.16 | TOut: 8.31 | LastACK: 22 | LastSent: 24
+ACK Num: 25 recvd | Retransmission: False => UPDATE sRTT
+Time: 136.52 | Event: Ack received | Num: 25 | EffWin: 2.00 | CWND: 2.00 | RTT: 8.87 | sRTT: 5.10 | TOut: 10.20 | LastACK: 24 | LastSent: 24
+Time: 137.53 | Event: Sent segment | Num: 25 | EffWin: 1.00 | CWND: 2.00 | RTT: 8.87 | sRTT: 5.10 | TOut: 10.20 | LastACK: 24 | LastSent: 25
+Time: 138.53 | Event: Sent segment | Num: 26 | EffWin: 0.00 | CWND: 2.00 | RTT: 8.87 | sRTT: 5.10 | TOut: 10.20 | LastACK: 24 | LastSent: 26
+ACK Num: 27 recvd | Retransmission: False => UPDATE sRTT
+Time: 140.67 | Event: Ack received | Num: 27 | EffWin: 2.00 | CWND: 2.50 | RTT: 3.14 | sRTT: 4.71 | TOut: 9.41 | LastACK: 26 | LastSent: 26
+Time: 141.67 | Event: Sent segment | Num: 27 | EffWin: 1.00 | CWND: 2.50 | RTT: 3.14 | sRTT: 4.71 | TOut: 9.41 | LastACK: 26 | LastSent: 27
+ACK Num: 28 recvd | Retransmission: False => UPDATE sRTT
+Time: 141.79 | Event: Ack received | Num: 28 | EffWin: 1.00 | CWND: 2.90 | RTT: 1.13 | sRTT: 3.99 | TOut: 7.98 | LastACK: 27 | LastSent: 28
+Time: 142.67 | Event: Sent segment | Num: 28 | EffWin: 1.00 | CWND: 2.90 | RTT: 1.13 | sRTT: 3.99 | TOut: 7.98 | LastACK: 27 | LastSent: 28
+Time: 143.68 | Event: Sent segment lost | Num: 29 | EffWin: 0.00 | CWND: 2.90 | RTT: 1.13 | sRTT: 3.99 | TOut: 7.98 | LastACK: 27 | LastSent: 29
+ACK Num: 29 recvd | Retransmission: False => UPDATE sRTT
+Time: 144.80 | Event: Ack received | Num: 29 | EffWin: 2.00 | CWND: 3.24 | RTT: 3.14 | sRTT: 3.82 | TOut: 7.64 | LastACK: 28 | LastSent: 29
+Time: 145.80 | Event: Sent segment | Num: 30 | EffWin: 1.00 | CWND: 3.24 | RTT: 3.14 | sRTT: 3.82 | TOut: 7.64 | LastACK: 28 | LastSent: 30
+Time: 146.81 | Event: Sent segment lost | Num: 31 | EffWin: 0.00 | CWND: 3.24 | RTT: 3.14 | sRTT: 3.82 | TOut: 7.64 | LastACK: 28 | LastSent: 31
+Time: 146.90 | Event: Ack received | Num: 29 | EffWin: 0.00 | CWND: 3.24 | RTT: 3.14 | sRTT: 3.82 | TOut: 7.64 | LastACK: 28 | LastSent: 31
+Time: 149.01 | Event: Ack received | Num: 29 | EffWin: 0.00 | CWND: 3.24 | RTT: 3.14 | sRTT: 3.82 | TOut: 7.64 | LastACK: 28 | LastSent: 31
+Time: 151.11 | Event: Ack received | Num: 29 | EffWin: 0.00 | CWND: 3.24 | RTT: 3.14 | sRTT: 3.82 | TOut: 7.64 | LastACK: 28 | LastSent: 31
+Time: 151.67 | Event: Segment timeOut | Num: 29 | RetransBuffer: [] + [ 29 ] | EffWin: 0.00 | CWND: 3.24 | RTT: 3.14 | sRTT: 3.82 | TOut: 7.64 | LastACK: 28 | LastSent: 31
+Time: 152.69 | Event: Segment retransmission | Num: 29 | EffWin: 0.00 | CWND: 3.24 | RTT: 3.14 | sRTT: 3.82 | TOut: 7.64 | LastACK: 28 | LastSent: 31
+ACK Num: 31 recvd | Retransmission: False => UPDATE sRTT
+Time: 152.84 | Event: Ack received | Num: 31 | EffWin: 1.00 | CWND: 2.00 | RTT: 8.03 | sRTT: 4.66 | TOut: 9.33 | LastACK: 30 | LastSent: 31
+Time: 153.84 | Event: Sent segment | Num: 32 | EffWin: 0.00 | CWND: 2.00 | RTT: 8.03 | sRTT: 4.66 | TOut: 9.33 | LastACK: 30 | LastSent: 32
+Time: 154.46 | Event: Segment timeOut | Num: 31 | RetransBuffer: [] + [ 31 ] | EffWin: 0.00 | CWND: 2.00 | RTT: 8.03 | sRTT: 4.66 | TOut: 9.33 | LastACK: 30 | LastSent: 32
+Time: 154.95 | Event: Ack received | Num: 31 | EffWin: 0.00 | CWND: 2.00 | RTT: 8.03 | sRTT: 4.66 | TOut: 9.33 | LastACK: 30 | LastSent: 32
+Time: 155.49 | Event: Segment retransmission | Num: 31 | EffWin: 0.00 | CWND: 2.00 | RTT: 8.03 | sRTT: 4.66 | TOut: 9.33 | LastACK: 30 | LastSent: 32
+ACK Num: 33 recvd | Retransmission: False => UPDATE sRTT
+Time: 157.62 | Event: Ack received | Num: 33 | EffWin: 2.00 | CWND: 2.00 | RTT: 4.78 | sRTT: 4.69 | TOut: 9.37 | LastACK: 32 | LastSent: 32
+Time: 158.62 | Event: Sent segment | Num: 33 | EffWin: 1.00 | CWND: 2.00 | RTT: 4.78 | sRTT: 4.69 | TOut: 9.37 | LastACK: 32 | LastSent: 33
+ACK Num: 34 recvd | Retransmission: False => UPDATE sRTT
+Time: 158.75 | Event: Ack received | Num: 34 | EffWin: 1.00 | CWND: 2.50 | RTT: 1.13 | sRTT: 3.98 | TOut: 7.95 | LastACK: 33 | LastSent: 34
+Time: 159.62 | Event: Sent segment | Num: 34 | EffWin: 1.00 | CWND: 2.50 | RTT: 1.13 | sRTT: 3.98 | TOut: 7.95 | LastACK: 33 | LastSent: 34
+Time: 160.63 | Event: Sent segment | Num: 35 | EffWin: 0.00 | CWND: 2.50 | RTT: 1.13 | sRTT: 3.98 | TOut: 7.95 | LastACK: 33 | LastSent: 35
+ACK Num: 36 recvd | Retransmission: False => UPDATE sRTT
+Time: 162.76 | Event: Ack received | Num: 36 | EffWin: 2.00 | CWND: 2.90 | RTT: 3.13 | sRTT: 3.81 | TOut: 7.61 | LastACK: 35 | LastSent: 35
+Time: 163.76 | Event: Sent segment | Num: 36 | EffWin: 1.00 | CWND: 2.90 | RTT: 3.13 | sRTT: 3.81 | TOut: 7.61 | LastACK: 35 | LastSent: 36
+ACK Num: 37 recvd | Retransmission: False => UPDATE sRTT
+Time: 163.88 | Event: Ack received | Num: 37 | EffWin: 2.00 | CWND: 3.24 | RTT: 1.12 | sRTT: 3.27 | TOut: 6.54 | LastACK: 36 | LastSent: 37
+Time: 164.76 | Event: Sent segment lost | Num: 37 | EffWin: 2.00 | CWND: 3.24 | RTT: 1.12 | sRTT: 3.27 | TOut: 6.54 | LastACK: 36 | LastSent: 37
+Time: 165.76 | Event: Sent segment | Num: 38 | EffWin: 1.00 | CWND: 3.24 | RTT: 1.12 | sRTT: 3.27 | TOut: 6.54 | LastACK: 36 | LastSent: 38
+Time: 165.99 | Event: Ack received | Num: 37 | EffWin: 0.00 | CWND: 3.24 | RTT: 1.12 | sRTT: 3.27 | TOut: 6.54 | LastACK: 36 | LastSent: 39
+Time: 166.77 | Event: Sent segment | Num: 39 | EffWin: 0.00 | CWND: 3.24 | RTT: 1.12 | sRTT: 3.27 | TOut: 6.54 | LastACK: 36 | LastSent: 39
+Time: 168.11 | Event: Ack received | Num: 37 | EffWin: 0.00 | CWND: 3.24 | RTT: 1.12 | sRTT: 3.27 | TOut: 6.54 | LastACK: 36 | LastSent: 39
+Time: 170.21 | Event: Ack received | Num: 37 | EffWin: 0.00 | CWND: 3.24 | RTT: 1.12 | sRTT: 3.27 | TOut: 6.54 | LastACK: 36 | LastSent: 39
+Time: 171.31 | Event: Segment timeOut | Num: 37 | RetransBuffer: [] + [ 37 ] | EffWin: 0.00 | CWND: 3.24 | RTT: 1.12 | sRTT: 3.27 | TOut: 6.54 | LastACK: 36 | LastSent: 39
+Time: 172.31 | Event: Ack received | Num: 37 | EffWin: 0.00 | CWND: 3.24 | RTT: 1.12 | sRTT: 3.27 | TOut: 6.54 | LastACK: 36 | LastSent: 39
+Time: 172.31 | Event: Segment timeOut | Num: 38 | RetransBuffer: [] + [ 38 ] | EffWin: 0.00 | CWND: 3.24 | RTT: 1.12 | sRTT: 3.27 | TOut: 6.54 | LastACK: 36 | LastSent: 39
+Time: 172.34 | Event: Segment retransmission | Num: 37 | EffWin: 0.00 | CWND: 3.24 | RTT: 1.12 | sRTT: 3.27 | TOut: 6.54 | LastACK: 36 | LastSent: 39
+ACK Num: 40 recvd | Retransmission: False => UPDATE sRTT
+Time: 172.46 | Event: Ack received | Num: 40 | EffWin: 2.00 | CWND: 2.00 | RTT: 6.70 | sRTT: 3.96 | TOut: 7.91 | LastACK: 39 | LastSent: 39
+Time: 173.32 | Event: Segment retransmission | Num: 38 | EffWin: 1.00 | CWND: 2.00 | RTT: 6.70 | sRTT: 3.96 | TOut: 7.91 | LastACK: 39 | LastSent: 40
+Time: 173.47 | Event: Sent segment | Num: 40 | EffWin: 0.00 | CWND: 1.00 | RTT: 6.70 | sRTT: 3.96 | TOut: 7.91 | LastACK: 39 | LastSent: 40
+ACK Num: 41 recvd | Retransmission: False => UPDATE sRTT
+Time: 175.61 | Event: Ack received | Num: 41 | EffWin: 2.00 | CWND: 2.00 | RTT: 3.14 | sRTT: 3.79 | TOut: 7.59 | LastACK: 40 | LastSent: 40
+Time: 176.61 | Event: Sent segment lost | Num: 41 | EffWin: 1.00 | CWND: 2.00 | RTT: 3.14 | sRTT: 3.79 | TOut: 7.59 | LastACK: 40 | LastSent: 41
+Time: 177.62 | Event: Sent segment | Num: 42 | EffWin:
