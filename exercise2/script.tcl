@@ -13,11 +13,13 @@
 
 set ns [new Simulator]
 
-set nf [open $ex.tr w]
-$ns trace-all $nf
-set nff [open $ex.rtt w]
+set filename "sim-trace"
 
-proc terminate() {} {
+set nf [open $filename.tr w]
+$ns trace-all $nf
+set nff [open $filename.rtt w]
+
+proc terminate {} {
     global ns nf nff
     $ns flush-trace
     close $nf
@@ -25,7 +27,9 @@ proc terminate() {} {
     exit 0
 }
 
-proc record() {} {
+proc record {} {
+    global ns
+    set now [$ns now]
     $ns at [expr $now+0.1] "record"
 }
 
@@ -43,37 +47,37 @@ $ns duplex-link $n2 $n3 1Mb 50ms DropTail
 $ns duplex-link $n3 $n4 1Mb 50ms DropTail
 
 # Node0
-set tcp0 [new Agent/TCP] # TCP Tahoe
+set tcp0 [new Agent/TCP]
 $ns attach-agent $n0 $tcp0
 
 set cbr0 [new Application/Traffic/CBR]
-$cbr0 set rate_ 0.5Mbps # varialbes ending with undersocore are internal ns variables
-$cbr0 attach-agent $tcp0 # attach cbr to the agent
-$tcp0 set class_ 0 # traffic flow identifier
+$cbr0 set rate_ 0.5Mbps
+$cbr0 attach-agent $tcp0
+$tcp0 set class_ 0
 $tcp0 set tcpTick_ 0.01
 $tcp0 set add793slowstart_ true
 $tcp0 set cwmax_ 40
 
 # Node1
-set tcp1 [new Agent/TCP/Reno] # TCP Reno
+set tcp1 [new Agent/TCP/Reno]
 $ns attach-agent $n1 $tcp1
 
 set cbr1 [new Application/Traffic/CBR]
-$cbr1 set rate_ 0.5Mbps # varialbes ending with undersocore are internal ns variables
-$cbr1 attach-agent $tcp1 # attach cbr to the agent
-$tcp1 set class_ 1 # traffic flow identifier
+$cbr1 set rate_ 0.5Mbps
+$cbr1 attach-agent $tcp1
+$tcp1 set class_ 1
 $tcp1 set tcpTick_ 0.01
 $tcp1 set add793slowstart_ true
 $tcp1 set cwmax_ 40
 
 # Node2
-set tcp2 [new Agent/TCP/Vegas] # TCP Vegas
+set tcp2 [new Agent/TCP/Vegas]
 $ns attach-agent $n2 $tcp2
 
 set cbr2 [new Application/Traffic/CBR]
-$cbr2 set rate_ 0.5Mbps # varialbes ending with undersocore are internal ns variables
-$cbr2 attach-agent $tcp2 # attach cbr to the agent
-$tcp2 set class_ 2 # traffic flow identifier
+$cbr2 set rate_ 0.5Mbps
+$cbr2 attach-agent $tcp2
+$tcp2 set class_ 2
 $tcp2 set tcpTick_ 0.01
 $tcp2 set add793slowstart_ true
 $tcp2 set cwmax_ 40
@@ -128,7 +132,7 @@ for { set index 0 }  { $index < 20 }  { incr index 4 } {
 }
 
 $ns at 0.0 "record"
-$ns at 20.0 "finish"
+$ns at 20.0 "terminate"
 
 # Init Simulation
 $ns run
