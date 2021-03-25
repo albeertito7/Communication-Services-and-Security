@@ -88,11 +88,19 @@ $ns queue-limit $n3 $n4 20
 
 # Node4
 set null0 [new Agent/TCPSink]
+set null1 [new Agent/TCPSink]
+set null2 [new Agent/TCPSink]
 $ns attach-agent $n4 $null0
+$ns attach-agent $n4 $null1
+$ns attach-agent $n4 $null2
+
 $ns connect $tcp0 $null0
-$ns connect $tcp1 $null0
-$ns connect $tcp2 $null0
-$tcp_agents($index) attach-trace $nff
+$ns connect $tcp1 $null1
+$ns connect $tcp2 $null2
+
+$tcp0 attach-trace $nff
+$tcp1 attach-trace $nff
+$tcp2 attach-trace $nff
 
 # Config Simulation
 # Every half sec CBR0
