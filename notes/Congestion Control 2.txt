@@ -49,7 +49,7 @@ Slow Start:
 
 
 ** 3 Different mechanisms of Congestion Control: Original, Additive and SlowStart **
-** But aside that mechanisms there are a few improvements: FastRetransmit and FastRecovery **
+** But aside that mechanisms there are a few improvements: Fast Retransmit and Fast Recovery **
 
 Fast Retransmit
     - helps TCP with retransmissions before TimeOut
@@ -61,3 +61,12 @@ Fast Retransmit
         - re-sent the lost segment
         - cwnd=cwini, cwmax=cwmax/2 and slow-start
     - around half of the total TimeOut saved => improving throughput by 20%
+
+    ** Fast Retransmit gets 8% more transmissions **
+
+Fast Recovery
+    - When duplicate ACKs arrive, CongestionWindow reduces to half
+    - At this point, increase linearly, avoiding slow start phase
+    - Even though, TimeOuts occur, do slow start (multiplicative increase)
+
+** 11% more transmissions with Fast Retransmit and Fast Recovery together **
