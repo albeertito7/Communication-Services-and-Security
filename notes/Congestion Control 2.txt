@@ -23,3 +23,40 @@ Additive increase/Multiplicative decrease
     - Idea: TimeOut => retransmissions => worst congestion => fast reaction
     - RTT must be estimated accurately => adaptative retransmission
         - RTT will tell when a TimeOut is produced
+
+
+Slow Start:
+    - improvement of previous one
+    - performs better
+    
+    - CWMAX, CongestionWindow absolute maximum value
+    - cwini, cwnd initial value (usually 1 MSS)
+    - cwmax, cwnd maximum value (initially set to CWMAX)
+    - When an ACK is received,
+        
+            if cwnd z cwmax { (exponential increase)
+                cwnd += MSS
+            }
+            else { (linear increase)
+                cwnd += MSS/cwnd
+                cwmax=MIN(CWMAX, cwnd)
+            }
+    
+    - When TimeOut,
+
+            cwnd = cwini
+            cwmax = MAX(cwini, cwmax/2)
+
+
+** 3 Different mechanisms of Congestion Control: Original, Additive and SlowStart **
+** But aside that mechanisms there are a few improvements: FastRetransmit and FastRecovery **
+
+Fast Retransmit
+    - helps TCP with retransmissions before TimeOut
+
+    - when receiver gets a segment out of sequence => sends an ACK of the last in-sequence segment
+    - transmitter will receive a duplicated ACK
+    - when 3 duplicated ACKs in a row
+        - re-sent the lost segment
+        - cwnd=cwini, cwmax=cwmax/2 and slow-start
+    - around half of the total TimeOut saved => improving throughput by 20%
