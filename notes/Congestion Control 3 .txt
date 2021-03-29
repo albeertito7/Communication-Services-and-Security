@@ -58,3 +58,19 @@ Random Early Detection (RED)
         - RED requires a larger queu than MaxTh in order to absorb variations between following measurements
         - When a queu is full, segments are dropped (drop tail)
         - 100 ms could be a good time between samples. It has no sense take more than a sample inside the same RTT
+
+
+Source-Based Congestion Avoidance
+    - algorithms detecting congestion from the source end
+    - different aspects:
+        - How they detect when congestion starts: RTT increases, throughput changes ...
+        - How they reacts
+    - TCP Implementations:
+        - TCP Tahoe (BSD Network Release 1): It is a TCP with Jacobson/Karels algorithm including the before explained congestion control mechanisms (but fast recovery)
+        - TCP Reno (BRN 2) includes fast recovery and more (delayed ACK)
+        - TCP Vegas: adds source-based congestion avoidance
+
+    TCP Vegas
+        - based on the detection of throughput saturation. Following the facts occur:
+            - While CongestionWindow increases, measured throughput by the transmitter keeps stable
+            - Routers start to be saturated
