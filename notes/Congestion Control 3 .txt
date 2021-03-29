@@ -1,0 +1,55 @@
+Congestion: Other mechanisms
+
+- TCP congestion control mechanisms are "reactive" (the ones viewed)
+- Let's see how "preventive" mechanisms work (Congestion avoidance)
+    - Random Early Detection (RED) => work only in routers
+    - Source based => work only in transmitters (Tx) => also called TCP Vegas
+
+
+Random Early Detection (RED)
+
+    - routers monitor their queues. Just before congestion, segments are bit marked or selectively dropped out
+    - transmitter being informed
+        - TimeOuts
+        - duplicate ACKs
+    - Objective: decrease CongestionWindow before congestion by dropping out some segments => DropTail?
+
+    ** Idea: drop some segments before the congestion on the routers is produced, before routers queues are full **
+    ** How do we know when to drop? When this drops must be produced? **
+
+    Queue monitoring
+        - RED periodically computes the queu average length (AvgLen) by filtering
+
+                (Low pass filter)
+                AvgLen = (1 - α) · AvgLen + α · SampleLen
+
+            being SampleLen the sampled lehgnt and 0 <= α <= 1
+
+        - 2 thresholds defined, MinTh i MaxTh, and the folowwing policy
+
+            if AvgLen <= MinTh {
+                - put the segment in queue
+            }
+
+            if MinTh < AvgLen < MaxTh {
+                - compute probability P
+                - drop out segment with probability P
+            }
+
+            if AvgLen >= MaxTh {
+                - drop out segment
+            }
+
+    Problems:
+        - segments sometimes dropped out at bursts
+        - no more than a segment in less than RTT should be withdrawn:
+            - one segment is enough to stop increasing the congestion window (with fast retransmit)
+            - dropping out more than one segment could lead Transmitter to slow start
+        
+    Improvements:
+
+            P' = MaxP · [(AvgLen - MinTh) - (MaxTh - MinTh)]
+
+            P = [P' / (1 - counter · P')]
+
+        being counter the number of segments enqueued from the last drop out
