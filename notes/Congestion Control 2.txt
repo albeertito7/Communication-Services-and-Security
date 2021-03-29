@@ -53,10 +53,11 @@ Slow Start:
 
 Fast Retransmit
     - helps TCP with retransmissions before TimeOut
+    - send retransmissions before timeOut produced => How can i detect a timeOut before produced?
 
-    - when receiver gets a segment out of sequence => sends an ACK of the last in-sequence segment
+    - When receiver gets a segment out of sequence => sends an ACK of the last in-sequence segment
     - transmitter will receive a duplicated ACK
-    - when 3 duplicated ACKs in a row
+    - When 3 duplicated ACKs in a row
         - re-sent the lost segment
         - cwnd=cwini, cwmax=cwmax/2 and slow-start
     - around half of the total TimeOut saved => improving throughput by 20%
