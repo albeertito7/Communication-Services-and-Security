@@ -43,7 +43,7 @@ Random Early Detection (RED)
     Problems:
         - segments sometimes dropped out at bursts
         - no more than a segment in less than RTT should be withdrawn:
-            - one segment is enough to stop increasing the congestion window (with fast retransmit)
+            - one segment is enough to stop increasing the congestion window (with fast retransmit) => the Tx will react
             - dropping out more than one segment could lead Transmitter to slow start
         
     Improvements:
@@ -53,3 +53,8 @@ Random Early Detection (RED)
             P = [P' / (1 - counter · P')]
 
         being counter the number of segments enqueued from the last drop out
+
+    Some Thoughts:
+        - RED requires a larger queu than MaxTh in order to absorb variations between following measurements
+        - When a queu is full, segments are dropped (drop tail)
+        - 100 ms could be a good time between samples. It has no sense take more than a sample inside the same RTT
