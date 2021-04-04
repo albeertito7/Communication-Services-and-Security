@@ -1,71 +1,89 @@
-import matplotlib.pyplot as plt
-import numpy as np
+"""
+ICT Project: Communication Services and Security
+Exercise 2
+Albert Pérez Datsira
+Jeongyun Lee
+"""
+
+import sys, os
 import pandas as pd
+import matplotlib.pyplot as plt
+from logger import Logger
 
-# sim-trace.tr
-header = ['Event_Type', 'Time', 'Link_Source_Node', 'Link_Destination_Node', 'Segment_Type', 'Segment_Size', 'Flags', 'Flow_Identifier', 'Segment_Source_Address', 'Segment_Destination_Address', 'Segment_Number', 'Segment_Identifier']
+sys.stdout = Logger("logProcessDataScript") # redirect stdout to create a log file
+
+# process sim-trace.tr
+header = ['Event_Type', 'Time', 'Src_Node', 'Dst_Node', 'Pckt_Type', 'Pckt_Size', 'Flags', 'Flow_Identifier', 'Src_Address', 'Dst_Address', 'Pckt_Number', 'Pckt_Identifier']
 df = pd.read_csv('sim-trace.tr', sep=' ', names = header)
-df.head()
 
+print(df.head().to_string(), "\n")
 df.info()
 
 # Lost Packets
-lost_packages = df.Event_Type == 'd'
-ids = df[lost_packages].Segment_Source_Address
+lost_pckts = df.Event_Type == 'd' # get lots packets by mapping those ones with event_type == 'd' (dropped)
+ids = df[lost_pckts].Flow_Identifier # filter by the flow_identifier (class)
+# we could also filter by Src_Address, as we need the packets dropped by the n3
 
-n0_lost = ids == 0 #TCP Vegas
-n1_lost = ids == 1 #TCP Reno
-n2_lost = ids == 2 #TCP Tahoe
+n0_lost = sum(ids == 0) # TCP Tahoe
+n1_lost = sum(ids == 1) # TCP Reno
+n2_lost = sum(ids == 2) # TCP Vegas
 
-print("Lost Packages")
-print("Node 0:\t", sum(n0_lost))
-print("Node 1:\t", sum(n1_lost))
-print("Node 2:\t", sum(n2_lost))
-print("Total:\t", ids.count())
-
+print("-"*os.get_terminal_size().columns)
+print("Lost Packets")
+print("Node 0, TCP Tahoe:\t", n0_lost)
+print("Node 1, TCP Reno:\t", n1_lost)
+print("Node 2, TCP Vegas:\t", n2_lost)
+print("Total: ", ids.count())
 
 # Transferred bytes
-def getNode(row, node):
-  return row.Link_Source_Node == int(node) and row.Event_Type == '-'
+def mapNode(row, node):
+  return row.Src_Node == int(node) and row.Event_Type == '-' # mapping condition
 
-n0_packets = df.apply(getNode, axis = 1, args=('0'))
-n1_packets = df.apply(getNode, axis = 1, args=('1'))
-n2_packets = df.apply(getNode, axis = 1, args=('2'))
-n3_packets = df.apply(getNode, axis = 1, args=('3'))
-n4_packets = df.apply(getNode, axis = 1, args=('4'))
+n0_pckts = df.apply(mapNode, axis = 1, args=('0'))
+n1_pckts = df.apply(mapNode, axis = 1, args=('1'))
+n2_pckts = df.apply(mapNode, axis = 1, args=('2'))
+n3_pckts = df.apply(mapNode, axis = 1, args=('3'))
+n4_pckts = df.apply(mapNode, axis = 1, args=('4'))
 
-n0_bytes = sum(df[n0_packets].Segment_Size)
-n1_bytes = sum(df[n1_packets].Segment_Size)
-n2_bytes = sum(df[n2_packets].Segment_Size)
-n3_bytes = sum(df[n3_packets].Segment_Size)
-n4_bytes = sum(df[n4_packets].Segment_Size)
+n0_bytes = sum(df[n0_pckts].Pckt_Size)
+n1_bytes = sum(df[n1_pckts].Pckt_Size)
+n2_bytes = sum(df[n2_pckts].Pckt_Size)
+n3_bytes = sum(df[n3_pckts].Pckt_Size)
+n4_bytes = sum(df[n4_pckts].Pckt_Size)
 total_bytes = n0_bytes + n1_bytes + n2_bytes + n3_bytes + n4_bytes
 
+print("-"*os.get_terminal_size().columns)
 print("Transferred bytes:")
-print("Node 0:\t", n0_bytes)
-print("Node 1:\t", n1_bytes)
-print("Node 2:\t", n2_bytes)
+print("Node 0, TCP Tahoe:\t", n0_bytes)
+print("Node 1, TCP Reno:\t", n1_bytes)
+print("Node 2, TCP Vegas:\t", n2_bytes)
 print("Node 3:\t", n3_bytes)
 print("Node 4:\t", n4_bytes)
-print("Total:\t", total_bytes)
+print("Total n0,n1,n2 well transferred bytes:", n3_bytes)
+print("Total ACKs bytes:", n4_bytes)
+print("Total:", total_bytes)
+print("-"*os.get_terminal_size().columns)
 
-
-# sim-trace.rtt
-header2 = ['Node', 'Time', 'rtt', 'srtt', 'cwnd', 'cwmax', 'bo']
+# process sim-trace.rtt
+header2 = ['Node', 'Time', 'rtt', 'srtt', 'cwnd', 'cwmax', 'bo'] # values collected
 df2 = pd.read_csv('sim-trace.rtt', sep=' ', names = header2)
-df2.head()
 
-time = df2[df2.Node==0].Time
-cwnd0 = df2[df2.Node==0].cwnd
-cwnd1 = df2[df2.Node==1].cwnd
-cwnd2 = df2[df2.Node==2].cwnd
+print(df2.head().to_string(), "\n")
+df2.info()
 
-plt.plot(time,cwnd2, label='TCP Vegas', color='red')
-plt.plot(time,cwnd1, label='TCP Reno', color='green')
-plt.plot(time,cwnd0, label='TCP Tahoe', color='blue')
+# get cwnd values
+cwnd0 = df2[df2.Node == 0].cwnd
+cwnd1 = df2[df2.Node == 1].cwnd
+cwnd2 = df2[df2.Node == 2].cwnd
+time = df2[df2.Node == 0].Time
 
-plt.title('Congestion Windows x Time')
+plt.plot(time, cwnd0, label='TCP Tahoe', color='blue')
+plt.plot(time, cwnd1, label='TCP Reno', color='green')
+plt.plot(time, cwnd2, label='TCP Vegas', color='red')
+
+plt.title('Congestion window x Time')
 plt.xlabel('Time (s)')
-plt.ylabel('Congestion Window (MSS)')
+plt.ylabel('Congestion window (MSS)')
 plt.legend(loc='upper right')
+plt.savefig("cwnd-plot.png")
 plt.show()
