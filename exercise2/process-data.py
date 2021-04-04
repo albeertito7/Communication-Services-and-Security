@@ -59,9 +59,8 @@ print("Node 1, TCP Reno:\t", n1_bytes)
 print("Node 2, TCP Vegas:\t", n2_bytes)
 print("Node 3:\t", n3_bytes)
 print("Node 4:\t", n4_bytes)
-print("Total n0,n1,n2 well transferred bytes:", n3_bytes)
-print("Total ACKs bytes:", n4_bytes)
-print("Total:", total_bytes)
+print("Total Agents:\t", n0_bytes + n1_bytes + n2_bytes)
+print("Total Scenario:\t", total_bytes)
 print("-"*os.get_terminal_size().columns)
 
 # process sim-trace.rtt

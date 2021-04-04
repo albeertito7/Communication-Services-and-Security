@@ -37,9 +37,8 @@ Node 1, TCP Reno:	 759240
 Node 2, TCP Vegas:	 940000
 Node 3:	 2517600
 Node 4:	 94440
-Total n0,n1,n2 well transferred bytes: 2517600
-Total ACKs bytes: 94440
-Total: 5077800
+Total Agents:	 2465760
+Total Scenario:	 5077800
 --------------------------------------------------------------------------------
    Node  Time  rtt  srtt  cwnd  cwmax   bo
 0     0   0.0  0.0   0.0   1.0     40  0.0
