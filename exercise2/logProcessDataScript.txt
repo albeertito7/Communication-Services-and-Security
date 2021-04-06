@@ -1,0 +1,63 @@
+  Event_Type  Time  Src_Node  Dst_Node Pckt_Type  Pckt_Size    Flags  Flow_Identifier  Src_Address  Dst_Address  Pckt_Number  Pckt_Identifier
+0          +   0.0         0         3       tcp         40  -------                0          0.0          4.0            0                0
+1          -   0.0         0         3       tcp         40  -------                0          0.0          4.0            0                0
+2          +   0.0         1         3       tcp         40  -------                1          1.0          4.1            0                1
+3          -   0.0         1         3       tcp         40  -------                1          1.0          4.1            0                1
+4          +   0.0         2         3       tcp       1000  -------                2          2.0          4.2            0                2 
+
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 28519 entries, 0 to 28518
+Data columns (total 12 columns):
+ #   Column           Non-Null Count  Dtype  
+---  ------           --------------  -----  
+ 0   Event_Type       28519 non-null  object 
+ 1   Time             28519 non-null  float64
+ 2   Src_Node         28519 non-null  int64  
+ 3   Dst_Node         28519 non-null  int64  
+ 4   Pckt_Type        28519 non-null  object 
+ 5   Pckt_Size        28519 non-null  int64  
+ 6   Flags            28519 non-null  object 
+ 7   Flow_Identifier  28519 non-null  int64  
+ 8   Src_Address      28519 non-null  float64
+ 9   Dst_Address      28519 non-null  float64
+ 10  Pckt_Number      28519 non-null  int64  
+ 11  Pckt_Identifier  28519 non-null  int64  
+dtypes: float64(3), int64(6), object(3)
+memory usage: 2.6+ MB
+--------------------------------------------------------------------------------
+Lost Packets
+Node 0, TCP Tahoe:	 10
+Node 1, TCP Reno:	 11
+Node 2, TCP Vegas:	 1
+Total:  22
+--------------------------------------------------------------------------------
+Transferred bytes:
+Node 0, TCP Tahoe:	 766520
+Node 1, TCP Reno:	 759240
+Node 2, TCP Vegas:	 940000
+Node 3:	 2517600
+Node 4:	 94440
+Total Agents:	 2465760
+Total Scenario:	 5077800
+--------------------------------------------------------------------------------
+   Node  Time  rtt  srtt  cwnd  cwmax   bo
+0     0   0.0  0.0   0.0   1.0     40  0.0
+1     1   0.0  0.0   0.0   1.0     40  0.0
+2     2   0.0  0.0   0.0   1.0     40  0.0
+3     0   0.1  0.0   0.0   1.0     40  0.0
+4     1   0.1  0.0   0.0   1.0     40  0.0 
+
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 600 entries, 0 to 599
+Data columns (total 7 columns):
+ #   Column  Non-Null Count  Dtype  
+---  ------  --------------  -----  
+ 0   Node    600 non-null    int64  
+ 1   Time    600 non-null    float64
+ 2   rtt     600 non-null    float64
+ 3   srtt    600 non-null    float64
+ 4   cwnd    600 non-null    float64
+ 5   cwmax   600 non-null    int64  
+ 6   bo      600 non-null    float64
+dtypes: float64(5), int64(2)
+memory usage: 32.9 KB
