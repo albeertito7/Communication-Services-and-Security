@@ -1,1 +1,32 @@
-Quality of Service (QoS)
+QoS - Quality of service
+
+- ability of the network to give/improve some service for a specific network traffic
+- What u expect from QoS? - adjust some features for this specific traffic
+    - dedicated badwith
+    - improving packet losses
+    - avoiding and managing congestion
+    - shaping traffic: match traffic specification to some parameters applied to the traffic
+    - setting priorities across the network: how this priorities can be set? and how this priorities travel thorugh the network from one point to another
+
+QoS Architecture - three essential components
+    - QoS in a single network: queueing, shceduling and shaping
+    - QoS across networks: signaling
+    - QoS policy and management
+
+
+Queueing
+    - a router has only one hardware queue, but
+    - soft queues only formed when incoming traffic is faster than outcoming rates
+    - By default (if not QoS defined), slow output i/fs (few Mbps) use Weighted Fair Queueing. Otherwise: FIFO applied
+    - Queue length may be configured
+    - When queues are full, traffic is dropped
+
+Scheduling
+    - the way the soft queues are served:
+        - WFQ (flow based, class based) => how to determine the flows to asisgn the rate/bandwith?
+        - Custom queueing: assigns a given bandwidth
+        - Priority queueing: Assigns priority. Higher priorities are served first
+
+Shaping
+    - average rate and maximum burst size are enforced on outgoing traffic
+    - token bucket mechanisms
