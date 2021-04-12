@@ -30,3 +30,14 @@ Scheduling
 Shaping
     - average rate and maximum burst size are enforced on outgoing traffic
     - token bucket mechanisms
+
+Signaling:
+    - Field TOS (Type of Service) of IPv4 header marked to indicate priority
+    - 3 MSB (Most Significative Bits) determine IP precedence. 8 priority levels
+    - 6 MSB determine DSCP (Differentiated Services Code Point, DiffServ). New Standard
+
+    IP Precedence values
+    -------------------------------
+    111 Network Control
+    110 Internet Control
+    etc.
