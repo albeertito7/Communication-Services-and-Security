@@ -1,0 +1,24 @@
+GNS3 Simulator
+
+- graphical network simulator
+- desing real case test scenarios, learning by example
+
+- allows to create complex network with GUI
+- emulates CISCO IOS using dynamips
+- multiplatform, opensource and allowing VirtualBox and Wireshark integration as a traffic tracer in order to inspect and analyze the traffic between network components
+- more at www.gns3.com
+
+
+Config router:
+
+#config terminal
+#interface FastEthernet 0/0
+#ip address 10.0.0.1 255.255.255.0
+#no shutdown // set interface to no shutdown mode
+#exit
+#exit
+#write memory // to save the config
+
+
+#ping 10.0.0.1
+#show ip interface // to see the config ip of a router
