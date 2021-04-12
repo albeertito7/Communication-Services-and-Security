@@ -41,3 +41,23 @@ Signaling:
     111 Network Control
     110 Internet Control
     etc.
+
+QoS sercice models
+    - models: how the service capabilities are described in a network
+    - 3 models:
+        - Best effort
+        - Integrated Services
+        - Differentiated services
+    
+    - Best effort:
+        - No QoS applied
+        - FIFO Queueing
+
+    - Integrated Services:
+        - using some specific protocols such as RSVP (Reservation Protocol)
+        - will ask for bandwith and delay requierements
+        - if possible: WFQ or WRED (Weighted RED) adjusting its configuration to the network deal
+
+    - Differentiated services
+        - not explicitly requested a particulary service
+        - using IP Precedence or DCSP signaling, to put this bits into the network
