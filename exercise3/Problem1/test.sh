@@ -40,19 +40,19 @@ process()
     echo ""
 }
 
-time=$(tshark -Y "ip.dsfield.dscp == 56  and ip.src == 11.0.0.1" -r captureP1.pcapng -T fields -e frame.time_relative | tail -1)
+time=$(tshark -Y "ip.dsfield.dscp == 56  and ip.src == 11.0.0.1" -r $file -T fields -e frame.time_relative | tail -1)
 
-bytes_array=$(tshark -Y "ip.dsfield.dscp == 56  and ip.src == 11.0.0.1" -r captureP1.pcapng -T fields -e frame.len)
+bytes_array=$(tshark -Y "ip.dsfield.dscp == 56  and ip.src == 11.0.0.1" -r $file -T fields -e frame.len)
 bytes=$(get_bytes $bytes_array)
 process "Tap0 IP Precedence 7" $bytes
 total_bytes=$bytes
 
-bytes_array=$(tshark -Y "ip.dsfield.dscp == 8  and ip.src == 11.0.0.1" -r captureP1.pcapng -T fields -e frame.len)
+bytes_array=$(tshark -Y "ip.dsfield.dscp == 8  and ip.src == 11.0.0.1" -r $file -T fields -e frame.len)
 bytes=$(get_bytes $bytes_array)
 process "Tap0 IP Precedence 1" $bytes
 total_bytes=[$total_bytes + $bytes]
 
-bytes_array=$(tshark -Y "ip.src == 12.0.0.1" -r captureP1.pcapng -T fields -e frame.len)
+bytes_array=$(tshark -Y "ip.src == 12.0.0.1" -r $file -T fields -e frame.len)
 bytes=$(get_bytes $bytes_array)
 process "Tap1 IP Without Precedence" $bytes
 total_bytes=[$total_bytes + $bytes]
