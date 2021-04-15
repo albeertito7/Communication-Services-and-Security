@@ -4,13 +4,16 @@ file=$1
 
 if [ $# -eq 0 ]
 then
-    echo "No file argument supplied. Must be specified the .pcapng file to be evaluated."
+    echo "No file argument supplied."
+    echo "Must be specified the .pcapng file to be evaluated."
+    echo "Exiting ..."
+    exit 1
 elif [ "${file##*.}" != "pcapng" ]
 then
 	echo "The extension of the file provided is not correct."
     echo "Must be a '.pcapng' file; the PCAP Next Generation file format, that is a standard format for storing captured data over the network."
     echo "Exiting ..."
-    exit -1 
+    exit 2
 fi
 
 echo "Processing $file file ..."
