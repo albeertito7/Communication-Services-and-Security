@@ -1,5 +1,10 @@
 #!/bin/bash
 
+display_usage()
+{ 
+	echo -e "\nUsage: $0 [.pcapng file] \n" 
+} 
+
 file=$1
 
 if [ $# -eq 0 ]
@@ -8,6 +13,10 @@ then
     echo "Must be specified the .pcapng file to be evaluated."
     echo "Exiting ..."
     exit 1
+elif elif [[ ( $# == "--help") ||  $# == "-h" ]] 
+then 
+    display_usage
+    exit 0
 elif [ "${file##*.}" != "pcapng" ]
 then
 	echo "The extension of the file provided is not correct."
