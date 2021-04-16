@@ -2,23 +2,29 @@
 
 display_usage()
 {
-    echo -e "\nUsage: $0 [.pcapng file] \n" 
+    echo -e "\nUsage: $0 [options] <infile>"
+    echo -e "\nShell script that computes from the capture frame infile the percentatge of bandwidth ocuppation for each of the streams coming from C1-tap0 and C2-tap1."
+    echo -e "\nrequired arguments:"
+    echo -e "   infile:         Must be a .pcap or .pcapng file"
+    echo -e "\noptional arguments:"
+    echo -e "   -h, --help      Shows usage message to provide help"
 } 
 
 file=$1
 
 if [ $# -eq 0 ]
 then
-    echo "No file argument supplied. Must be specified the .pcapng file to be evaluated."
-elif elif [[ ( $# == "--help") ||  $# == "-h" ]] 
+    echo "error: No infile argument supplied."
+    display_usage
+    exit 1
+elif [[ ( $* == "--help") ||  $* == "-h" ]] 
 then 
     display_usage
     exit 0
-elif [ "${file##*.}" != "pcapng" ]
+elif [[ "${file##*.}" != "pcapng" && "${file##*.}" != "pcap" ]]
 then
-    echo "The extension of the file provided is not correct."
-    echo "Must be a '.pcapng' file; the PCAP Next Generation file format, that is a standard format for storing captured data over the network."
-    echo "Exiting ..."
+    echo "error: The extension of the file provided is not correct."
+    display_usage
     exit -1 
 fi
 
