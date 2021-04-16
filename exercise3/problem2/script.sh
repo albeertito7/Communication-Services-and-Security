@@ -1,8 +1,8 @@
 #!/bin/bash
 
 display_usage()
-{ 
-	echo -e "\nUsage: $0 [.pcapng file] \n" 
+{
+    echo -e "\nUsage: $0 [.pcapng file] \n" 
 } 
 
 file=$1
