@@ -16,7 +16,7 @@ then
     exit 0
 elif [ "${file##*.}" != "pcapng" ]
 then
-	echo "The extension of the file provided is not correct."
+    echo "The extension of the file provided is not correct."
     echo "Must be a '.pcapng' file; the PCAP Next Generation file format, that is a standard format for storing captured data over the network."
     echo "Exiting ..."
     exit -1 
