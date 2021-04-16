@@ -1,10 +1,19 @@
 #!/bin/bash
 
+display_usage()
+{ 
+	echo -e "\nUsage: $0 [.pcapng file] \n" 
+} 
+
 file=$1
 
 if [ $# -eq 0 ]
 then
     echo "No file argument supplied. Must be specified the .pcapng file to be evaluated."
+elif elif [[ ( $# == "--help") ||  $# == "-h" ]] 
+then 
+    display_usage
+    exit 0
 elif [ "${file##*.}" != "pcapng" ]
 then
 	echo "The extension of the file provided is not correct."
@@ -12,6 +21,8 @@ then
     echo "Exiting ..."
     exit -1 
 fi
+
+echo "Processing $file file ..."
 
 get_bytes()
 {
