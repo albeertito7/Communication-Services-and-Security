@@ -4,13 +4,13 @@ display_usage()
 {
     echo -e "\nusage: $0 [options] <infile>"
     echo -e "\nShell script that computes from the capture frame infile the total Bytes transmitted and the average rate in Bytes per second (Bps) for the following traffic flows:"
-    echo -e "   * From 11.0.0.1 with precedence 7"
-    echo -e "   * From 11.0.0.1 with precedence 1"
-    echo -e "   * From 12.0.0.1"
+    echo  "   * From 11.0.0.1 with precedence 7"
+    echo  "   * From 11.0.0.1 with precedence 1"
+    echo  "   * From 12.0.0.1"
     echo -e "\nrequired arguments:"
-    echo -e "   infile:         Must be a .pcap or .pcapng file"
+    echo  "   infile:         Must be a .pcap or .pcapng file"
     echo -e "\noptional arguments:"
-    echo -e "   -h, --help      Shows usage message to provide help"
+    echo  "   -h, --help      Shows usage message to provide help"
 } 
 
 file=$1
@@ -52,11 +52,9 @@ get_bytes()
 
 process()
 {
-    echo ""
-    echo "$1: $2 Bytes"
+    echo -e "\n$1: $2 Bytes"
     avg_rate=$(bc <<< "$2/$time")
-    echo "Avg rate: $avg_rate Bps"
-    echo ""
+    echo -e "Avg rate: $avg_rate Bps\n"
 }
 
 time=$(tshark -Y "ip.dsfield.dscp == 56  and ip.src == 11.0.0.1" -r $file -T fields -e frame.time_relative | tail -1)
@@ -76,6 +74,4 @@ bytes=$(get_bytes $bytes_array)
 process "Tap1 IP Without Precedence" $bytes
 total_bytes=$[$total_bytes + $bytes]
 
-echo ""
-echo "Total bytes: $total_bytes"
-echo ""
+echo -e "\nTotal bytes: $total_bytes Bytes\n"
