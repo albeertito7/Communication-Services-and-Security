@@ -29,14 +29,14 @@ def ReadData(filename,c):
 
 def Plot():
     pl.figure(figsize=(18, 10), dpi=80, facecolor='white', edgecolor='k')
-    pl.plot(time[0], rate[0], linewidth=1, color='blue', label='Without Traffic Shaping')
-    pl.plot(time[1], rate[1], linewidth=1, color='red', label='Traffic Shaping rate 200 kB/s')
-    pl.plot(time[2], rate[2], linewidth=1, color='green', label='Traffic Shaping rate 800 kB/s')
-    pl.plot(time[3], rate[3], linewidth=1, color='yellow', label='Traffic Shaping rate 1000 kB/s')
+    pl.plot(time[0], rate[0], linewidth=1, color='blue', label='No traffic shaping')
+    pl.plot(time[1], rate[1], linewidth=1, color='red', label='Traffic shaping rate 800 kb/s')
+    #pl.plot(time[2], rate[2], linewidth=1, color='green', label='Traffic Shaping rate 800 kb/s')
+    #pl.plot(time[3], rate[3], linewidth=1, color='yellow', label='Traffic Shaping rate 1000 kb/s')
 
 
     pl.legend()
-    pl.ylabel('rate Bytes/second')
+    pl.ylabel('rate bits/second')
     pl.xlabel('Seconds')
     pl.yticks(np.arange(0,230000,10000))
     pl.xticks(np.arange(0,180,10))
@@ -58,10 +58,10 @@ rate.append([])
 rate.append([])
 
 
-ReadData('./without_traffic.csv',0);
-ReadData('./200.csv',1);
-ReadData('./800.csv',2);
-ReadData('./1000.csv',3);
+ReadData('./output-noshapping.csv',0);
+ReadData('./output-800.csv',1);
+#ReadData('./800.csv',2);
+#ReadData('./1000.csv',3);
 
 
 Plot()

@@ -1,8 +1,12 @@
 #!/bin/bash
 
+# ICT Project: Communication Services and Security
+# Exercise 4 Problem 1 Part 1
+# Albert Pérez Datsira
+
 display_usage() {
 	echo -e "\nusage: $0 [options] <infile>"
-    echo -e "\nShell script that computes from the capture frame infile the bytes rate at each second"
+    echo -e "\nShell script that computes from the capture frame infile the bits rate at each second"
     echo -e "\nrequired arguments:"
     echo  "   infile:         Must be a .pcap or .pcapng file"
     echo -e "\noptional arguments:"
@@ -29,6 +33,11 @@ then
     exit 2
 fi
 
+if [ ! -z "$2" ]
+then
+	outfile="$2.csv" 
+fi
+
 # -r | --read-file <infile>
 # -T fields (set the format of the output when viewing decoded packet data)
 # -e <field> (add a field to the list of fields to display)
@@ -39,7 +48,7 @@ rate() {
 	infile=$1
 	outfile=$2
 
-	times=$( tshark -Y "ip.src==14.0.0.1" -r "$infile" -T fields -e frame.time_relative)
+	times=$( tshark -Y "ip.src==14.0.0.1" -r "$infile" -T fields -e frame.time_relative) # look 14.0.0.1 is used as the topology has a NAT configured
 	time=(${times// / })
 
 	bytes_arrays=$(tshark -Y "ip.src==14.0.0.1" -r "$infile" -T fields -e frame.len)
@@ -55,8 +64,9 @@ rate() {
 		dif=$(bc <<< "$current_time-$last_time>=1.0") # if differs more than 1 sec
 
 		if [ "$dif" -eq "1" ]; then
-			rate=$(bc <<< "($bytes/($current_time-$last_time))")
-			echo "$current_time,$bytes,$rate" | tee -a "$outfile"
+			bits=$((bytes*8))
+			rate=$(bc <<< "($bits/($current_time-$last_time))")
+			echo "$current_time,$bits,$rate" | tee -a "$outfile"
 			bytes=0
 			last_time=$current_time
 		fi
