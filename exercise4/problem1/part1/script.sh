@@ -6,12 +6,12 @@
 
 display_usage() {
 	echo -e "\nusage: $0 [options] <infile>"
-    echo -e "\nShell script that computes from the capture frame infile the bits rate at each second"
-    echo -e "\nrequired arguments:"
-    echo  "   infile:         Must be a .pcap or .pcapng file"
-    echo -e "\noptional arguments:"
+	echo -e "\nShell script that computes from the capture frame infile the bits rate at each second"
+	echo -e "\nrequired arguments:"
+	echo  "   infile:         Must be a .pcap or .pcapng file"
+	echo -e "\noptional arguments:"
 	echo  "   -o, --out       Output name .csv file. By default will be 'output'"
-    echo  "   -h, --help      Shows usage message to provide help"
+	echo  "   -h, --help      Shows usage message to provide help"
 }
 
 infile=$1
