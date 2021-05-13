@@ -24,3 +24,29 @@ Wireless Ethernet
     
     - Baseband signals must be MODULATED before transmitted to the air
         and depending on the carrier frequency of the modulation the anthena radiation will have particular properties
+
+        - today wireless communications performs at two different frequencies: 2.4 and 5 GHz
+    
+- each stations radiates its signals to the air with a specific power, depending on the radio equipment
+- this power determines which is the range
+
+
+IEEE => Institute of Electrical and Electronic Engineering => Institution that deals with Standaritzation
+                                                           => define STANDARDS related to internet communications
+- at early 90s IEEE starts the 802.11 working group
+- particulary for wireless communications the .11 group defines all the subsequence standards: .11b, .11ac, .11i, etc.
+
+
+Multiple Access
+
+- basic idea of communications
+- to share some common media (the air, a wire, etc)
+- based on the existance of multiple station that want to transmite over the same media
+
+- so if if the aim is to get transmission without interference, raises three methods:
+    - TDMA (Time Division Multiple Access)
+    - FDMA (Frequency Division Multiple Access)
+    - CDMA (Code Division Multiple Access)
+
+- this three methods are the only ones that can share a communication with partners
+
