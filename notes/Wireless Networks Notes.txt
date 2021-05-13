@@ -49,6 +49,7 @@ Multiple Access
     - CDMA (Code Division Multiple Access)
 
 - this three methods are the only ones that can share a communication with partners
+- all three are equivalent, can provide the same bandwidth/performance
 
 TDMA
 - every user will transmite its information at different times slots
@@ -64,3 +65,25 @@ CDMA
 - and the only requierement is that those codes should be orthogonal
     if code1 * code2 the result must be 0
 
+
+WLAN Technologies
+
+- two main transmission techniques
+
+    Narrow Band => FDMA
+        - a frequency band is assigned to each client
+        - frequency assignment such that no interferences among clients
+
+    Broad Band => CDMA
+        - clients physically interfere among them
+        - spread spectrum techniques recover itnerfering situation
+        - so, more immunicty to external interfering sources
+
+
+WLAN
+
+- uses TDMA mechanism overall
+- and uses Broad Band not to share the media but in order to immune the transmissions over external interferences
+- but all users/stations using the same CODE
+
+- so basically, WLAN uses Broad Band not to provide Multiple Access but to spread the spectrum in order to get more immunity
