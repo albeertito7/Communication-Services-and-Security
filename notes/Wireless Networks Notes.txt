@@ -50,3 +50,17 @@ Multiple Access
 
 - this three methods are the only ones that can share a communication with partners
 
+TDMA
+- every user will transmite its information at different times slots
+- the media shared by time
+
+FDMA
+- every user uses a different frequency carriers
+
+CDMA
+- transmissions at the same time and at the same frequency
+- each bit of the transmission is multiplied by a specific user CODE
+- each user has its own code
+- and the only requierement is that those codes should be orthogonal
+    if code1 * code2 the result must be 0
+
