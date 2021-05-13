@@ -11,3 +11,16 @@ Wireless Ethernet
 - our Wifi is a wireless implementation of the Ethernet standards
 
 - an Ethernet is a cable network at which some clients (stations) are attached
+- the idea of Wireless communication is to implement some kind of multiple access but in the air, not in a wire
+    in the air, it is a bit much more complicated to manage all the stuff needed
+
+- WLAN (Wireless Local Area Network) rises as an alternative to wired networks (Ethernet)
+- to employ radio frequency
+
+- and because the communications should be transmit on air
+    - the transmission can not be longer be transmitted using baseband as when using Ethernet
+    - so if a station sends this baseband signal to an anthena, the output radiation will drop into a small range
+        because baseband signals are not suitable to be transmitted into the air because of physical reasons
+    
+    - Baseband signals must be MODULATED before transmitted to the air
+        and depending on the carrier frequency of the modulation the anthena radiation will have particular properties
