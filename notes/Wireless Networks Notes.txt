@@ -1,1 +1,13 @@
 Wireless Networks Notes
+
+3 parts:
+    - wireless technologies (standards, physical layer, mac layer, WLAN frames, etct)
+    - wifi security (authentication, privacy, understand the current standard security 802.11i the most secure standard for wireless communications)
+    - wifi deployments
+
+
+Wireless Ethernet
+
+- our Wifi is a wireless implementation of the Ethernet standards
+
+- an Ethernet is a cable network at which some clients (stations) are attached
