@@ -223,6 +223,24 @@ MAC Frame
 
         Protcol | Type | Subtype | To DS | From DS | Frag. | Retrans. | PM | PMD | WEP | Order
 
+
+    - Duration => it has two different meanings
+        1. How will last the current transmission in microseconds
+            indicates the time that channel is expected to be busy during the current transmission
+        2. not important
+
+    - Addresses => really important
+        - MAC frames always will have up to 4 adresses
+
+        - BSSID (Basic Service Set Identifier) => AP MAC wired address
+            identifies a Wirless Lan
+
+        - Addr1 => destination in the air
+        - Addr2 => origin in the air
+        - Addr3 => end-source or end-destination
+        - Addr4 =>
     
+        - all controls and management frames has ToDS & FromDS as 00, but also Ad-Hoc networks
+
     - the most important part is the Body => where the data is (IP packet)
     - CRC (Cyclic Redundancy Code) => to protect all the body information, IS A ERROR DETECTOR
