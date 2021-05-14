@@ -241,6 +241,24 @@ MAC Frame
         - Addr4 =>
     
         - all controls and management frames has ToDS & FromDS as 00, but also Ad-Hoc networks
+            taking into account that in Ad-hoc networks as there is no AP the Addr3 BSSID is randomly generated
 
+        - when both bits sets to 1 => Wireless bridges
+            you can communicate two AP via a radio (Wireless) communications, and not only with a wired one
+
+    - Sequence: for fragmented frames indicates their sequence order
     - the most important part is the Body => where the data is (IP packet)
     - CRC (Cyclic Redundancy Code) => to protect all the body information, IS A ERROR DETECTOR
+
+
+
+- a set of BSSID perform a SSID for short
+
+Example:
+
+    - eduroam is an ESSID (Extended SSI) composed by several BSSID (BSSID1, BSSID2 ... etc.)
+    - why different BSSID? because eduroam network has different IPs but all of them belongs to the same extended SSID which is eduroam
+
+    - ESSID => 32 ASCII characters included in management frames, such as the beacon frames
+        - this is how networks are identified, by using beacon frames which are a special kind of management frames
+            that anounces the network
