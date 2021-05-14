@@ -87,3 +87,55 @@ WLAN
 - but all users/stations using the same CODE
 
 - so basically, WLAN uses Broad Band not to provide Multiple Access but to spread the spectrum in order to get more immunity
+
+
+
+Wireless communications are Modulated Transmission
+
+- so they operate at some frequency
+- ther are not baseband transmissions
+
+- the frequency depends on the standard: 2.4 or 5 GHz
+
+- each network should operate in a particular channel
+
+
+
+Different Configurations in a WLAN scenario
+
+    - Ad-hoc (not really used)
+        - communicate each station with its corresponding peer
+        - communicate direcly to other client
+
+** Wirelss interfaces have different modes**
+** a few are: adhoc, managed, monitor, AP (Access Point) **
+
+    - distributed networks (infraestructure mode)
+        - each station communicates with others using the Access Point
+        - this APs are wired to the LAN (Local Area Network)
+
+        - the client station interfaces operates in mode: managed
+        - the main station operates in mode: Access Point (may be a router)
+
+        - each AP covers a particular cell, which it is own frequency (channel)
+        - the idea is to deploy as much as AP as needed to cover all the geographical area and with the objective to avoid channel interferences
+        - so if there is an area where two channels interfere, choose their frequency accurately in such a way that in the common area no interference will exist
+
+
+**
+* i/f monitor mode, used when we want to sniff traffic
+* whenever this traffic goes to you or not
+**
+
+**
+* if you want to communicate two stations without using AP, you can use adhoc mode
+* also you can use one of your stations with AP mode
+**
+
+
+Medium Access Control (MAC)
+
+- Which is the MAC on these types of networks?
+
+
+- CSMA (Carrier Sense Multiple Access) no longer efficient for wireless lan
