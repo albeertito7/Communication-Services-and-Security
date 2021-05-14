@@ -137,5 +137,92 @@ Medium Access Control (MAC)
 
 - Which is the MAC on these types of networks?
 
-
 - CSMA (Carrier Sense Multiple Access) no longer efficient for wireless lan
+- CSMA works fine with ethernet because the frame uses to be really larger than the lan network itself
+    but this doesn't happen on wireless communication, which could be smaller
+
+- Hidden Station problem: interferences are produced cuz of out of range respect other stations
+
+
+- then, the idea is to think into something different:
+
+MACA protocol (Multiple Access with Collision Avoidance)
+    - A wants to send to B => A sends a RTS (Request To Send) packet, which contains the size of the data to be sent
+    - all the stations receiving RTS from A (inside A range) keep quiet until B responds
+    - B sends a CTS (Clear To Send) to A, telling its availability to receive data
+        CTS frame also have the data size from A
+    - all the stations receiving CTS from B (inside B range) keep quiet during B transmission time
+    - when a RTS is sent and no response is received, enters into a exponential binary backoff retranmission
+
+
+** RTS and CTS frames can collide **
+** so, if you sent and RTS and doesn't receive a CTS you wait some time and try again **
+
+
+
+MACAW protocol (Multiple Access with Collision Avoidance for Wireless)
+
+- efficiency improved
+
+- sending ACK when a frame has been correctly received
+- but it is no major improvement
+
+
+**
+* On Wireshark will see some RTS, CTS and ACK before seeing data transmissions
+* RTS, CTS , ACK => repeated pattern for every wireless transmission
+**
+
+
+WLAN Frames
+
+- DataFrames: end user information frames
+- Controls Frames: MAC operation related frames, such as RTS, CTS, ACK, ...
+- Management Frames: Management operations related to beacons, authentication, SSID, ...
+
+
+
+WLAN frame structure (format)
+
+    - Preamble: two fields
+        - Sync: some bits of 0101... pattern, used for receiver synchronization
+            during the first 80 bits there is a perfect signal (clock signal 1Mbps), used by the receiver to synchronize
+            the receiver clock should be the same of the transmitter one (the same frequency rate)
+        - SDF (Start Frame Delimiter): 16 bits (0000 1100 1011 1101)
+
+    - PLCP Header (Physical Layer COnvergence Procedure)
+        - information related with radio (radio information)
+        - this information is related to what kind of modulation, transmission speeds, bands, channels, etc. used
+    - MAC Frame
+        Layer 2 frame
+
+
+MAC Frame
+
+          2            2          6           6           6           2         6            0 - 2312         4        Bytes
+
+    Frame Control | Duration | Address 1 | Address 2 | Address 3 | Sequence | Address 4 |       Body        | CRC
+
+    - Frame Control
+        - protocol: set to 00
+        - type frame: there are two bits which determines the type of frame
+            - 00: Management
+            - 01: Control
+            - 10: Data
+        - subtype
+        - To DS (Distribution System): set to 1 for frames going to AP
+        - From DS: set to 1 for frames coming from AP
+        - Fragmentation: indicates fragmented data
+        - Retransmission: 1 if retransmitted
+        - PM (Power Management) tells that station is goint to enter in power saving mode
+        - PMD: set 1 if AP has pending data for a PM mode station
+        - WEP: indicates if the data is protected or not (enciphered data)
+        - Order
+
+            2       2       4        1        1        1        1       1     1     1     1     Bytes
+
+        Protcol | Type | Subtype | To DS | From DS | Frag. | Retrans. | PM | PMD | WEP | Order
+
+    
+    - the most important part is the Body => where the data is (IP packet)
+    - CRC (Cyclic Redundancy Code) => to protect all the body information, IS A ERROR DETECTOR
