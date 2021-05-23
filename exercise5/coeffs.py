@@ -6,7 +6,8 @@ import math
 
 def coeffa(n):
     #return (1/(math.pi*n))*(math.sin(3*math.pi*n/4)- math.sin(math.pi*n/4)+ math.sin(7*math.pi*n/4)- math.sin(6*math.pi*n/4))
-    return (4 * math.sin((math.pi*n)/2))/(math.pi*n)
+    #return (4 * math.sin((math.pi*n)/2))/(math.pi*n)
+    return (-4 * math.sin((math.pi*n)/3))/(math.pi*n)
 
 def coeffb(n):
     return 0
@@ -14,10 +15,10 @@ def coeffb(n):
 
 def Signal(t,T):
     num = int(t)
-    if num%2 == 0:
-        return 1
+    if num%3 == 0:
+        return -1
     else:
-        return 0
+        return 1
 
     """
     a=t-int(t)
@@ -43,7 +44,7 @@ def PlotSignal(n,f):
     sig=[]
     sigc=[]
     for i in range(PointsPerPeriod*NumberOfPeriodsToPlot):
-        sig.append(Signal(1.*i/PointsPerPeriod,Period))
+        sig.append(Signal(1.*i/PointsPerPeriod, Period))
         #sigc.append(SignalC(1.*i/PointsPerPeriod,n))
     
 
@@ -55,7 +56,7 @@ def PlotSignal(n,f):
     pl.ylabel('Voltage')
     pl.grid()
     pl.ylabel('')
-    pl.ylim(0, 1.2)
+    pl.ylim(-1.2, 1.2)
     labels=['0']
     for i in range(1, NumberOfPeriodsToPlot+1):
         labels.append(str(i))
@@ -77,7 +78,7 @@ def PlotCoeffs():
     pl.ylabel('$a_n$, $b_n$')
     pl.show()
 
-a=[0]
+a=[2/3]
 b=[0]
 for i in range(1,300):
     a.append(coeffa(i))
