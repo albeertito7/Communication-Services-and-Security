@@ -2,7 +2,6 @@
 ICT Project: Communication Services and Security
 Exercise 2
 Albert Pérez Datsira
-Jeongyun Lee
 """
 
 import sys, os
