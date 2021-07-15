@@ -1,3 +1,9 @@
+"""
+ICT Project: Communication Services and Security
+Exercise 2
+Albert Pérez Datsira
+"""
+
 import sys
 
 class Logger(object):
