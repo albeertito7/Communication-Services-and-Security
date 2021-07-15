@@ -1,3 +1,9 @@
+"""
+ICT Project: Communication Services and Security
+Exercise 1
+Albert Pérez Datsira
+"""
+
 import sys
 import socket
 import threading
