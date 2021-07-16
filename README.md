@@ -24,25 +24,25 @@ At the other hand, wireless technologies are explained, from technical solutinos
 - EPS4. Capacity to draft, design and implement projects and/or give novel solutions, using engineering-related tools.
 
 ## Subject contents
-1. Network congestion control
+**1.** Network congestion control
     - [x] TCP operations
-    * TCP flow control
-    * TCP congestion control
-    * Services policies
+    - [x] TCP flow control
+    - [x] TCP congestion control
+    - [x] Services policies
     
-2. Quality of Service (QoS)
-    * Traffic classification
-    * Congestion management
-    * Congestion avoidance
-    * Policing and shaping
-    * RSVP
+**2. Quality of Service (QoS)**
+    - [x] Traffic classification
+    - [x] Congestion management
+    - [x] Congestion avoidance
+    - [x] Policing and shaping
+    - [x] RSVP
     
 3. Wireless networks
-    * Wireless LAN
-    * Security
-    * Deployments
+    - [x] Wireless LAN
+    - [x] Security
+    - [x] Deployments
     
 4. VoIP
-    * Telephopny essentials
-    * Digital telephony
-    * Solutions. Asterisk
+    - [x] Telephopny essentials
+    - [x] Digital telephony
+    - [x] Solutions. Asterisk
