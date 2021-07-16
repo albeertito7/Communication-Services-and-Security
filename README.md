@@ -25,21 +25,21 @@ At the other hand, wireless technologies are explained, from technical solutinos
 
 ## Subject contents
 1. Network congestion control
-  - TCP operations
-  - TCP flow control
-  - TCP congestion control
-  - Services policies
+    * TCP operations
+    * TCP flow control
+    * TCP congestion control
+    * Services policies
 2. Quality of Service (QoS):
-  - Traffic classification
-  - Congestion management
-  - Congestion avoidance
-  - Policing and shaping
-  - RSVP
+    * Traffic classification
+    * Congestion management
+    * Congestion avoidance
+    * Policing and shaping
+    * RSVP
 3. Wireless networks:
-  - Wireless LAN
-  - Security
-  - Deployments
+    * Wireless LAN
+    * Security
+    * Deployments
 4. VoIP
-  - Telephopny essentials
-  - Digital telephony
-  - Solutions. Asterisk
+    * Telephopny essentials
+    * Digital telephony
+    * Solutions. Asterisk
