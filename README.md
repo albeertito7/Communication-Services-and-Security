@@ -25,7 +25,7 @@ At the other hand, wireless technologies are explained, from technical solutinos
 
 ## Subject contents
 1. Network congestion control
-    [x] TCP operations
+    - [x] TCP operations
     * TCP flow control
     * TCP congestion control
     * Services policies
