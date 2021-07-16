@@ -62,3 +62,11 @@ At the other hand, wireless technologies are explained, from technical solutinos
     - [x] Telephopny essentials
     - [x] Digital telephony
     - [x] Solutions. Asterisk
+
+## References
+- Internetworking with TCP/IP: Volume I. Douglas E. Comer. Prentice Hall, 1991.
+- TCP/IP Illustrated, Volume I. William R. Stevens. Addison-Wesley, 1994.
+- 802.11 Wireless Networks: The Definitive Guide. Matthew Ed. O’Reilly, 2002.
+- Implementing 802.1x. Security Solutions for Wired and Wireless Networks. Jim Geier. Wiley Publishing, 2008.
+- Switching to VoIP. Ted Wallingford. O’Reilly, 2005.
+- Asterisk: The Future of Telephony. Jim Van Meggelen, Leif Madsen & Jared Smith. O’Reilly, 2007.
