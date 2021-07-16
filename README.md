@@ -35,7 +35,7 @@ At the other hand, wireless technologies are explained, from technical solutinos
 - CE5. Capacity to comprehend and gain knowledge of using the internet and organize component models, intermediary software and services of new generation network technologies and protocols.
 - CE7. Ability to design, develop, manage and evaluate certification mechanisms and guarantee security in the treatment and access to information in a local or distributed processing system.
 
-### Degree-transversal competences Higher Polytecnic School (EPS)
+### Higher Polytecnic School (EPS) degree-transversal competences
 - EPS1 Ability to plan and organize personal work.
 - EPS4. Capacity to draft, design and implement projects and/or give novel solutions, using engineering-related tools.
 
