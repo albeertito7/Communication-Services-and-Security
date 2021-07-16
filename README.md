@@ -23,7 +23,7 @@ At the other hand, wireless technologies are explained, from technical solutinos
 - CG3 Ability to lead, plan and supervise multidisciplinary teams.
 - CG9 Ability to understand and apply the ethical responsibility, legislation and professional ethics of the activity of the profession of Computer Engineer.
 
-### University of Lleida strategic competences
+### University of Lleida (UdL) strategic competences
 - UdL1 Correction in written oral expression.
 - UdL2. Master a foreign language.
 - UdL3. Master Information and Communication Technologies.
@@ -35,7 +35,7 @@ At the other hand, wireless technologies are explained, from technical solutinos
 - CE5. Capacity to comprehend and gain knowledge of using the internet and organize component models, intermediary software and services of new generation network technologies and protocols.
 - CE7. Ability to design, develop, manage and evaluate certification mechanisms and guarantee security in the treatment and access to information in a local or distributed processing system.
 
-### Degree-transversal competences
+### Degree-transversal competences Higher Polytecnic School (EPS)
 - EPS1 Ability to plan and organize personal work.
 - EPS4. Capacity to draft, design and implement projects and/or give novel solutions, using engineering-related tools.
 
