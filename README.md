@@ -29,19 +29,16 @@ At the other hand, wireless technologies are explained, from technical solutinos
     * TCP flow control
     * TCP congestion control
     * Services policies
-    
 **2. Quality of Service (QoS)**
     * Traffic classification
     * Congestion management
     * Congestion avoidance
     * Policing and shaping
     * RSVP
-    
 **3. Wireless networks**
     * Wireless LAN
     * Security
     * Deployments
-    
 **4. VoIP**
     * Telephopny essentials
     * Digital telephony
