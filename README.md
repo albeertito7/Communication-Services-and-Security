@@ -1,4 +1,4 @@
-# Communication-Services-and-Security
+# ICT-Project: Communication-Services-and-Security
 
 This repository contains the exercises requiered during the subject 'ICT Project: Communication Services and Security' of the University of Lleida Master's degree in Informatics Engineering.
 
