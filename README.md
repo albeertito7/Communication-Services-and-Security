@@ -16,11 +16,27 @@ At the other hand, wireless technologies are explained, from technical solutinos
 - To deploy and configure common communication services: authentication, DNS, DHCP, VoIP, ...
 - To design, configure and test wireless deployments
 
-## Degree-specific competences
+## Competences
+### Degree-general competences
+- CG1 Ability to design, calculate and design products, processes and facilities in all areas of computer engineering.
+- CG2 Capacity for the management of works and installations of computer systems, complying with current regulations and ensuring the quality of the service.
+- CG3 Ability to lead, plan and supervise multidisciplinary teams.
+- CG9 Ability to understand and apply the ethical responsibility, legislation and professional ethics of the activity of the profession of Computer Engineer.
+
+### University of Lleida strategic competences
+- UdL1 Correction in written oral expression.
+- UdL2. Master a foreign language.
+- UdL3. Master Information and Communication Technologies.
+
+### Degree-specific competences
+- CE1. Capacity for the integration of technologies, applications, services and systems of computer engineering, with a generalist character, and in broader and multidisciplinary contexts.
+- CE2. Capacity for strategic planning, elaboration, direction, coordination and technical and economic management in the fields of computer engineering related, among others, to: systems, applications, services, networks, infrastructures or computer facilities and software development centers or factories, respecting the adequate compliance with environmental quality criteria and in multidisciplinary work environments.
 - CE4. Capacity to draft, design, define architecture, introduce, manage, use, run and maintain computer applications, networks, systems, services and contents.
 - CE5. Capacity to comprehend and gain knowledge of using the internet and organize component models, intermediary software and services of new generation network technologies and protocols.
+- CE7. Ability to design, develop, manage and evaluate certification mechanisms and guarantee security in the treatment and access to information in a local or distributed processing system.
 
 ### Degree-transversal competences
+- EPS1 Ability to plan and organize personal work.
 - EPS4. Capacity to draft, design and implement projects and/or give novel solutions, using engineering-related tools.
 
 ## Subject contents
