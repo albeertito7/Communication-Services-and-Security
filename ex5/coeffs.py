@@ -47,7 +47,7 @@ def PlotSignal(n,f):
         sig.append(Signal(1.*i/PointsPerPeriod, Period))
         #sigc.append(SignalC(1.*i/PointsPerPeriod,n))
     
-
+    print(sig)
     pl.figure(figsize=(10,8), dpi=80, facecolor='white', edgecolor='k')
     pl.plot(sig,linewidth=4,label='Signal')
     #l='Senyal aprox. amb '+str(n)+' coeffs.'
@@ -55,12 +55,12 @@ def PlotSignal(n,f):
     pl.xlabel('Time')
     pl.ylabel('Voltage')
     pl.grid()
-    pl.ylabel('')
+    #pl.ylabel('')
     pl.ylim(-1.2, 1.2)
-    labels=['0']
-    for i in range(1, NumberOfPeriodsToPlot+1):
-        labels.append(str(i))
-    pl.xticks(range(0,PointsPerPeriod*NumberOfPeriodsToPlot+1,PointsPerPeriod), labels)
+    #labels=['0']
+    #for i in range(1, NumberOfPeriodsToPlot+1):
+        #labels.append(str(i))
+    #pl.xticks(range(0,PointsPerPeriod*NumberOfPeriodsToPlot+1,PointsPerPeriod), labels)
     pl.legend()
     #pl.savefig(f)
     pl.show()
