@@ -1,6 +1,10 @@
 # ICT-Project: Communication-Services-and-Security
 
-This repository contains the exercises requiered during the subject 'ICT Project: Communication Services and Security' of the University of Lleida Master's degree in Informatics Engineering.
+This repository contains the exercises required during the subject 'ICT Project: Communication Services and Security' of the University of Lleida Master's degree in Informatics Engineering.
+
+This is a repository for PRACTISING, INSPIRATION and to review the solutions of a previous year, as they should not be the same.
+
+Give me a star :star: if you find it useful. You can contact me if any question.
 
 ## Subject's extra information
 The subject gives an overview of today's computer networks, dealing with their inherent congestion and mobility problems. At one hand, flow control, congestion and quality of service issues are studied, showing how requirements such as high demand, multimedia traffic and low delay are met.
